@@ -10,7 +10,7 @@ class Contact extends Controller
         $this->mail = new Mail_model();
     }
 
-    public function bla()
+    public function form()
     {
         if (!Url::post("contact")) {
             Load::view("contact");
@@ -28,11 +28,11 @@ class Contact extends Controller
         $validName = $this->mail->validateText($_POST['message']);
 
         if ($validMail && $validMsg && $validName == true) {
-            $headers = array(
-                'From' => 'Gameplay-party@example.com',
-                'Reply-To' => 'Gameplay-party@example.com',
-                'X-Mailer' => 'PHP/' . phpversion()
-            );
+            $headers[] = 'MIME-Version: 1.0';
+            $headers[] = 'Content-type: text/html; charset=iso-8859-1';
+            // Additional headers
+            $headers[] = 'To: Gameplay-party';
+            $headers[] = 'Nieuw bericht van Gameplay-party';
 
             mail($email, "Nieuw bericht Gameplay-party", $message, $headers);
         }

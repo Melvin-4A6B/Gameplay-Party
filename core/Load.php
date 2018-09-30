@@ -12,9 +12,9 @@
         $file .= ".php";
       }
 
-      require_once APP_PATH."views/template/header.php";
+      require_once APP_PATH."views/assets/header.php";
       require_once APP_PATH."views/".$file;
-      require_once APP_PATH."views/template/footer.php";
+      require_once APP_PATH."views/assets/footer.php";
     }
 
   }

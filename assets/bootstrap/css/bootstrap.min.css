@@ -3298,7 +3298,7 @@ textarea.input-group-sm>.form-control, textarea.input-group-sm>.input-group-addo
 	height: 50px;
 	padding: 15px 15px;
 	font-size: 18px;
-	line-height: 20px
+	line-height: 20px;
 }
 .navbar-brand:hover, .navbar-brand:focus {
 	text-decoration: none

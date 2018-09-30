@@ -5,8 +5,8 @@
                 Social Media
             </h5>
             <div class="col-md-12 text-center mt-2">
-                <a href="#" title="Facebook">
-                    <i class="fa fa-facebook-square"></i>
+                <a href="#" title="Facebook" >
+                    <i class="fa fa-facebook-square a-white"></i>
                 </a>
             </div>
 

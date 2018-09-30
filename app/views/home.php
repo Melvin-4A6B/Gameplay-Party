@@ -10,7 +10,7 @@
             condimentum hendrerit. Curabitur et urna id turpis semper porta. Ut dolor mi, efficitur ut odio eu, rhoncus
             tristique lectus.
         </p>
-        <p>
+        <p class="mb-5">
             Pellentesque non eleifend nunc. Pellentesque et ex eros. Proin semper est libero, sed elementum lorem
             sollicitudin non. Cras ut tincidunt risus, eget scelerisque nulla. Fusce finibus eros at tristique rhoncus.
             Aenean vel laoreet diam. Vestibulum vestibulum, sem ac finibus venenatis, libero velit tempus odio, eu

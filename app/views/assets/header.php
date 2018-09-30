@@ -12,7 +12,7 @@
     <title><?= TITLE; ?></title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-custom sticky-top">
     <div class="container">
         <a class="navbar-brand" href="<?= ROOT; ?>">
             <img src="<?= ROOT ?>app/views/images/gpp.svg" style="height: 100px;" alt="Logo">
@@ -24,13 +24,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= ROOT; ?>bioscoop/show/">Bioscopen</a>
+                    <a class="nav-link a-white" href="<?= ROOT; ?>bioscoop/show/">Bioscopen</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Reserveren</a>
+                    <a class="nav-link a-white" href="#">Reserveren</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= ROOT; ?>contact/bla">Contact</a>
+                    <a class="nav-link a-white" href="<?= ROOT; ?>contact/form">Contact</a>
                 </li>
             </ul>
             <?php
@@ -38,7 +38,7 @@
                 ?>
                 <ul class="navbar-nav mr-right">
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= ROOT; ?>user/login/">Login</a>
+                        <a class="nav-link a-white" href="<?= ROOT; ?>user/login/">Login</a>
                     </li>
                 </ul>
             <?php elseif ($_SESSION["uid"]["role_id"] == 5): ?>

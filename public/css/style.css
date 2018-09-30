@@ -1,8 +1,34 @@
+/*
+* Footer background: #006266
+*/
+
 * {
-  font-family: 'Quicksand', sans-serif ;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.p-color {
+    color: #2c3e50 !important;
+}
+
+.text-white {
+    color: #ffffff !important;
+}
+
+/* color for nav items*/
+.a-white {
+    color: #ffffff !important;
+
+}
+
+.a-white:hover {
+    color: lightgray !important;
+}
+
+.bg-custom {
+    background: #006266;
 }
 
 .fa-facebook-square {
-  color: #3B5998;
-  font-size: 50px;
+    color: #fff;
+    font-size: 50px;
 }

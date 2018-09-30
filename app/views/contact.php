@@ -2,7 +2,7 @@
     <div class="card">
         <div class="card-body my-4">
             <h3 class="card-title text-center mb-4">Contact</h3>
-            <form method="post" action="http://localhost/school/Gameplay-Party/contact/bla">
+            <form method="post" action="http://localhost/school/Gameplay-Party/contact/form">
                 <div class="col-md-8 m-auto">
                     <div class="form-group">
                         <label for="">Naam</label>

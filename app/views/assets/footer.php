@@ -1,23 +1,25 @@
-<footer class="footer bg-light text-black mt-4">
+<footer class="footer bg-custom text-black mt-4">
     <div class="container-fluid py-3">
         <div class="row">
-            <div class="col-md-12 text-center">
+            <h5 class="col-md-12 text-center text-white">
                 Social Media
-            </div>
+            </h5>
             <div class="col-md-12 text-center mt-2">
                 <a href="#" title="Facebook">
                     <i class="fa fa-facebook-square"></i>
                 </a>
             </div>
-            <div class="col-md-12 text-center mt-2">
-                <a href="#" title="Gebruikersvoorwaarden">Gebruikersvoorwaarden</a>
-                <a href="#" title="Privacy beleid" class="mx-3">Privacy beleid</a>
-                <a href="#" title="Cookie beleid">Cookie beleid</a>
-                <a href="#" title="Algemene verkoopvoorwaarden" class="mx-3">Algemene verkoopvoorwaarden</a>
-                <a href="#" title="Privacy beleid B2B" class="mr-3">Privacy beleid B2B</a>
-                <a href="#" title="Sitemap" >Sitemap</a>
+
+            <div class="col-md-12 text-center mt-2 ">
+                <a href="#" title="Gebruikersvoorwaarden" class="text-white">Gebruikersvoorwaarden</a>
+                <a href="#" title="Privacy beleid" class="mx-3 text-white">Privacy beleid</a>
+                <a href="#" title="Cookie beleid" class="text-white">Cookie beleid</a>
+                <a href="#" title="Algemene verkoopvoorwaarden" class="mx-3 text-white">Algemene verkoopvoorwaarden</a>
+                <a href="#" title="Privacy beleid B2B" class="mr-3 text-white">Privacy beleid B2B</a>
+                <a href="#" title="Sitemap" class="text-white">Sitemap</a>
             </div>
-            <div class="col-md-12 text-center mt-2">
+            <div class="col-md-12 text-center mt-2 text-white">
+                <hr class="text-center col-md-10">
                 &copy;<?= date("Y"); ?> Gameplay-Party
             </div>
         </div>

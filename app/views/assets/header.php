@@ -44,12 +44,12 @@
             <?php elseif ($_SESSION["uid"]["role_id"] == 5): ?>
                 <ul class="navbar-nav mr-right">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        <a class="nav-link dropdown-toggle a-white" href="#" id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <?= $_SESSION["uid"]["user_name"]; ?>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Beheren</a>
+                            <a class="dropdown-item" href="<?= ROOT; ?>admin/beheren/">Beheren</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="<?= ROOT; ?>user/logout/">Uitloggen</a>
                         </div>

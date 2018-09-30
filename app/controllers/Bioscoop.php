@@ -8,7 +8,7 @@
 
     public function get()
     {
-      $query = "SELECT * FROM bioscopen";
+      $query = "SELECT * FROM cinemas";
       $data = $this->model->getBios($query);
 
       return $data;

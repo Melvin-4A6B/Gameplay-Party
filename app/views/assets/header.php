@@ -12,7 +12,7 @@
     <title><?= TITLE; ?></title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-custom sticky-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-custom sticky-top mb-5">
     <div class="container">
         <a class="navbar-brand" href="<?= ROOT; ?>">
             <img src="<?= ROOT ?>app/views/images/gpp.svg" style="height: 100px;" alt="Logo">
@@ -26,9 +26,9 @@
                 <li class="nav-item">
                     <a class="nav-link a-white" href="<?= ROOT; ?>bioscoop/show/">Bioscopen</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link a-white" href="#">Reserveren</a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <a class="nav-link a-white" href="<?= ROOT; ?>contact/form">Contact</a>
                 </li>
@@ -65,23 +65,3 @@
         </div>
     </div>
 </nav>
-<header>
-    <div class="container">
-        <div class="row">
-            <div class="col-md">
-                <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="<?= ROOT ?>app\views\images\home-bg.jpg" class="my-5 img-fluid" alt="Header image"
-                                 title="Header image">
-                            <div class="carousel-caption d-none d-md-block mb-2 h-75">
-                                <h2>Welkom bij Gameplay-Party</h2>
-                                <p>De grootste party organisatie van Nederland!</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>

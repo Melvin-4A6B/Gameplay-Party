@@ -20,7 +20,7 @@
       return $data;
     }
 
-    public function bewerkPagina($query)
+    public function edit($query)
     {
       $this->db->UpdateData($query);
     }

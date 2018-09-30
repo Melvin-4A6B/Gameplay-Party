@@ -1,4 +1,4 @@
-<footer class="footer bg-custom text-black mt-4">
+<footer class="footer bg-custom text-black mt-5">
     <div class="container-fluid py-3">
         <div class="row">
             <h5 class="col-md-12 text-center text-white">

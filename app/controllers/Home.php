@@ -10,7 +10,7 @@
     {
       $data["welcome"] = TITLE; // TITLE is defined in: core/config.php
 
-      $query = "SELECT * FROM pages WHERE page_name = 'about'";
+      $query = "SELECT * FROM pages WHERE page_name = 'over-ons'";
       $data["aboutUs"] = $this->model->getContent($query);
       Load::view("home", $data);
     }

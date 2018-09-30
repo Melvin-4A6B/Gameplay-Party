@@ -8,8 +8,10 @@
 
     public function beheren()
     {
-      $query = "SELECT * FROM pages";
-      $data["pages"] = $this->model->getContent($query);
+      $pageQuery = "SELECT * FROM pages";
+      $biosQuery = "SELECT * FROM cinemas";
+      $data["pages"] = $this->model->getContent($pageQuery);
+      $data["cinemas"] = $this->model->getContent($biosQuery);
 
       Load::view("beheer", $data);
     }
@@ -25,16 +27,47 @@
     {
       if(isset($_POST["bewerken"]))
       {
-        // $this->debug($_POST);
         $naam = $_POST["naam"];
         $content = $_POST["content"];
         $query = "UPDATE pages SET page_name = '$naam' , page_content = '$content' WHERE page_id = '$id'";
-        $this->model->bewerkPagina($query);
+        $this->model->edit($query);
         $this->beheren();
-//        header("Location: ".ROOT."admin/beheren/");
-
       }
+    }
 
+    public function addCinema()
+    {
+      if(isset($_POST["addCinema"]))
+      {
+        $naam = $_POST["name"];
+        $straatnaam = $_POST["straatnaam"];
+        $huisnummer = $_POST["huisnummer"];
+        $postcode = $_POST["postcode"];
+        $plaats = $_POST["plaats"];
+        $stad = $_POST["stad"];
+        $auto = $_POST["auto"];
+        $ov = $_POST["ov"];
+        $fiets = $_POST["fiets"];
+        $voorwaarden = $_POST["voorwaarden"];
+        $rolstoel = $_POST["rolstoel"];
+
+        if($rolstoel == 'ja')
+        {
+          $wheelchair = 1;
+        }
+        else
+        {
+          $wheelchair = 0;
+        }
+
+        $query = "INSERT INTO cinemas (cinema_name, street, house_number, postal_code, city, state, car_accessibility, ov_accessibility, bike_accessibility, wheelchair_accessibility, cinema_conditions) VALUES('$naam', '$straatnaam', '$huisnummer', '$postcode', '$plaats', '$stad', '$auto', '$ov', '$fiets', '$wheelchair', '$voorwaarden')";
+        $this->model->edit($query);
+        $this->beheren();
+      }
+      else
+      {
+        Load::view("addBios");
+      }
     }
 
   }

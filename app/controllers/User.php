@@ -8,7 +8,7 @@
 
     public function login()
     {
-      if(isset($_POST["login"]))
+      if(isset($_REQUEST["login"]))
       {
         $this->validate(strip_tags($_POST["email"]), strip_tags($_POST["password"]));
       }

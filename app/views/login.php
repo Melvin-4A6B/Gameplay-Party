@@ -12,7 +12,7 @@
                         </div>
                     <?php endif; ?>
                     <h5 class="card-title text-center mb-4">Login</h5>
-                    <form method="post" action="<?= ROOT; ?>user/login/">
+                    <form method="post" action="<?= ROOT; ?>controllers/User/login/">
                         <div class="form-group">
                             <label for="email">Email adres</label>
                             <input type="email" id="email" class="form-control" name="email" placeholder="Email adres"

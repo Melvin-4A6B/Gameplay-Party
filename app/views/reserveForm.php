@@ -32,7 +32,7 @@
                         <label for="">Telefoonnummer </label>
                         <input type="tel" name="huisnummer" class="form-control">
                     </div>
-                    <div class="form-row">
+                    <div class="form-row mb-4">
                         <div class="col-md-7">
                             <label for="">Stad</label>
                             <input type="text" name="stad" class="form-control">
@@ -42,14 +42,15 @@
                             <input type="text" name="stad" class="form-control">
                         </div>
                     </div>
-                <div class="form-group mt-2">
-                    <label for="">Land </label>
-                    <input type="text" name="stad" class="form-control">
+                    <?php foreach ($reservations as $reservation): ?>
+                        <select>
+                            <option value='<?= 'test' ?>'><?= 'test' ?></option>
+                        </select>
+                    <?php endforeach; ?>
+                    <button type="submit" name="addCinema" class="form-control btn btn-primary">Reserveer!</button>
                 </div>
-                <button type="submit" name="addCinema" class="form-control btn btn-primary">Reserveer!</button>
+            </form>
         </div>
     </div>
-    </form>
 </div>
-</div>
-</div>
+

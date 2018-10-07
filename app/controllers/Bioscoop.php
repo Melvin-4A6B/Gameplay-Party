@@ -17,7 +17,6 @@
     public function show()
     {
       $data["bioscopen"] = $this->get();
-      $data["pictures"] = $this->get();
       Load::view("bioscoop", $data);
     }
 

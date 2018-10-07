@@ -1,6 +1,11 @@
 <?php
   class User extends Controller {
 
+    public function __construct()
+    {
+        $this->user = new User_model;
+    }
+
     public function login()
     {
       if(isset($_POST["login"]))
@@ -17,9 +22,8 @@
     {
       if($this->auth($email, $password))
       {
-        $user = new User_model;
         $query = "SELECT * FROM users WHERE email = '".$email."'";
-        if($logged_in = $user->check($query))
+        if($logged_in = $this->user->check($query))
         {
           session_start();
           $_SESSION["uid"] = $logged_in;
@@ -37,7 +41,11 @@
     public function auth($email, $password)
     {
       $auth = false;
-      if($email == ADMIN_EMAIL && $password == ADMIN_PASS)
+
+      $query = "SELECT * FROM users WHERE email = '".$email."' AND password = = '".$password."'";
+      $result = $this->user->check($query);
+
+      if($email == $db_email && $password == $db_pass)
       {
         $auth = true;
       }

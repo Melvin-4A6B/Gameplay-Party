@@ -70,4 +70,12 @@
       }
     }
 
+    public function getCinemaUsers()
+    {
+      $query = "SELECT * FROM users WHERE role_id = 1";
+      $data["cinemaUsers"] = $this->model->getContent($query);
+
+      Load::view("beheer", $data);
+    }
+
   }

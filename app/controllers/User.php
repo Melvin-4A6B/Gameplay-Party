@@ -14,14 +14,13 @@
       }
       else
       {
-          //hij gaat altijd hier
         Load::view("login");
       }
     }
 
     public function validate($email, $password)
     {
-      if($this->auth($email, $password))
+      if($logged_in = $this->auth($email, $password))
       {
           session_start();
           $_SESSION["uid"] = $logged_in;
@@ -44,7 +43,7 @@
 
       if($result)
       {
-        $auth = true;
+        $auth = $result;
       }
 
       return $auth;

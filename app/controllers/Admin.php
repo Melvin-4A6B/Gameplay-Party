@@ -9,9 +9,10 @@
     public function beheren()
     {
       $pageQuery = "SELECT * FROM pages";
-      $biosQuery = "SELECT * FROM cinemas";
+      $cinemaQuery = "SELECT * FROM users WHERE role_id = 1";;
+
       $data["pages"] = $this->model->getContent($pageQuery);
-      $data["cinemas"] = $this->model->getContent($biosQuery);
+      $data["cinemaUsers"] = $this->model->getContent($cinemaQuery);
 
       Load::view("beheer", $data);
     }
@@ -75,7 +76,7 @@
       $query = "SELECT * FROM users WHERE role_id = 1";
       $data["cinemaUsers"] = $this->model->getContent($query);
 
-      Load::view("beheer", $data);
+      return $data;
     }
 
   }

@@ -6,6 +6,11 @@
     font-family: 'Quicksand', sans-serif;
 }
 
+.container {
+    /* ONLY FOR DEBUG PURPOSES*/
+    /* background-color: grey; */
+}
+
 .btn-primary {
   background-color: #006266;
   border-color: #006266;

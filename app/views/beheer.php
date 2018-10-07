@@ -43,7 +43,7 @@
             <th scope="row"><?= $cinemaUser["user_id"]; ?></th>
             <td><?= substr($cinemaUser["user_name"], 0 ,40); ?></td>
             <td><?= substr($cinemaUser["email"], 0 ,40); ?></td>
-            <td><?= substr($cinemaUser["password"], 0 ,40); ?></td>
+            <td class="cinemaPassword"><?= substr($cinemaUser["password"], 0 ,40); ?></td>
           </tr>
         <?php endforeach; ?>
       </tbody>

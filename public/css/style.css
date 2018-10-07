@@ -6,6 +6,15 @@
     font-family: 'Quicksand', sans-serif;
 }
 
+.btn-primary {
+  background-color: #006266;
+  border-color: #006266;
+}
+
+.btn-primary:hover {
+  background-color: #018084;
+}
+
 .p-color {
     color: #2c3e50 !important;
 }

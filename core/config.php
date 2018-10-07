@@ -1,8 +1,8 @@
 <?php
   define("TITLE", "Gameplay Party");
   define("BASE_URL", "C:/xampp/htdocs/school/gameplay-party/");
-//  define("BASE_URL", "D:/Coding/xampp/htdocs/school/Gameplay-Party/");
   define("ROOT", "http://localhost/school/Gameplay-Party/");
+  define("IMG", ROOT . "app/views/images/");
   define("APP_PATH", "app/");
   define("CORE_PATH", "core/");
   define("DEFAULT_CONTROLLER", "Home");

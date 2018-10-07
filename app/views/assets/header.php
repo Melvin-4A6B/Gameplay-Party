@@ -15,7 +15,8 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-custom sticky-top mb-5">
     <div class="container">
         <a class="navbar-brand" href="<?= ROOT; ?>">
-            <img src="<?= ROOT ?>app/views/images/gpp.svg" style="height: 100px;" alt="Logo">
+            <!-- <img src="../view/images/gpp.svg" height="60" alt=""> -->
+            <img src="<?= ROOT ?>app/views/images/gpp.svg" style="height: 100px; margin-top: -12px; margin-bottom: -12px;" alt="Logo">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

@@ -5,18 +5,18 @@
                 Social Media
             </h5>
             <div class="col-md-12 text-center mt-2">
-                <a href="#" title="Facebook" >
+                <a href="https://www.facebook.com/Kinepolis.Nederland/" target="_blank" title="Facebook" >
                     <i class="fa fa-facebook-square a-white"></i>
                 </a>
             </div>
 
             <div class="col-md-12 text-center mt-2 ">
-                <a href="#" title="Gebruikersvoorwaarden" class="text-white">Gebruikersvoorwaarden</a>
-                <a href="#" title="Privacy beleid" class="mx-3 text-white">Privacy beleid</a>
-                <a href="#" title="Cookie beleid" class="text-white">Cookie beleid</a>
-                <a href="#" title="Algemene verkoopvoorwaarden" class="mx-3 text-white">Algemene verkoopvoorwaarden</a>
-                <a href="#" title="Privacy beleid B2B" class="mr-3 text-white">Privacy beleid B2B</a>
-                <a href="#" title="Sitemap" class="text-white">Sitemap</a>
+                <a href="https://www.autoriteitpersoonsgegevens.nl/" title="Gebruikersvoorwaarden" target="_blank" class="text-white">Gebruikersvoorwaarden</a>
+                <a href="https://www.autoriteitpersoonsgegevens.nl/" title="Privacy beleid" target="_blank" class="mx-3 text-white">Privacy beleid</a>
+                <a href="https://www.autoriteitpersoonsgegevens.nl/" title="Cookie beleid" target="_blank" class="text-white">Cookie beleid</a>
+                <a href="https://www.autoriteitpersoonsgegevens.nl/" title="Algemene verkoopvoorwaarden" target="_blank" class="mx-3 text-white">Algemene verkoopvoorwaarden</a>
+                <a href="https://www.autoriteitpersoonsgegevens.nl/" title="Privacy beleid B2B" target="_blank" class="mr-3 text-white">Privacy beleid B2B</a>
+                <a href="https://www.autoriteitpersoonsgegevens.nl/" title="Sitemap" target="_blank" class="text-white">Sitemap</a>
             </div>
             <div class="col-md-12 text-center mt-2 text-white">
                 <hr class="text-center col-md-10">

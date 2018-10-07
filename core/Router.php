@@ -16,7 +16,7 @@
 
     private function sendToDestination($className, $method, $params)
     {
-      $class = BASE_URL . APP_PATH . 'controllers/' . $className . '.php';
+      $class = 'app/controllers/' . $className . '.php';
 			require_once($class);
 			$obj = new $className;
 			die(call_user_func_array(array($obj, $method), $params));

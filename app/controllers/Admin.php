@@ -27,8 +27,8 @@
     {
       if(isset($_POST["bewerken"]))
       {
-        $naam = $_POST["naam"];
-        $content = $_POST["content"];
+        $naam = strip_tags($_POST["naam"]);
+        $content = strip_tags($_POST["content"]);
         $query = "UPDATE pages SET page_name = '$naam' , page_content = '$content' WHERE page_id = '$id'";
         $this->model->edit($query);
         $this->beheren();
@@ -39,17 +39,17 @@
     {
       if(isset($_POST["addCinema"]))
       {
-        $naam = $_POST["name"];
-        $straatnaam = $_POST["straatnaam"];
-        $huisnummer = $_POST["huisnummer"];
-        $postcode = $_POST["postcode"];
-        $plaats = $_POST["plaats"];
-        $stad = $_POST["stad"];
-        $auto = $_POST["auto"];
-        $ov = $_POST["ov"];
-        $fiets = $_POST["fiets"];
-        $voorwaarden = $_POST["voorwaarden"];
-        $rolstoel = $_POST["rolstoel"];
+        $naam = strip_tags($_POST["name"]);
+        $straatnaam = strip_tags($_POST["straatnaam"]);
+        $huisnummer = strip_tags($_POST["huisnummer"]);
+        $postcode = strip_tags($_POST["postcode"]);
+        $plaats = strip_tags($_POST["plaats"]);
+        $stad = strip_tags($_POST["stad"]);
+        $auto = strip_tags($_POST["auto"]);
+        $ov = strip_tags($_POST["ov"]);
+        $fiets = strip_tags($_POST["fiets"]);
+        $voorwaarden = strip_tags($_POST["voorwaarden"]);
+        $rolstoel = strip_tags($_POST["rolstoel"]);
 
         if($rolstoel == 'ja')
         {

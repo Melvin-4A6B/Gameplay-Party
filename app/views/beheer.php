@@ -17,7 +17,7 @@
             <tr>
               <th scope="row"><?= $page["page_id"]; ?></th>
               <td><?= $page["page_name"]; ?></td>
-              <td><?= $page["page_content"]; ?></td>
+              <td><?= substr($page["page_content"], 0, 100); ?></td>
               <td><a href="<?= ROOT; ?>admin/pagina_bewerken/<?= $page["page_id"]; ?>" title="Pagina content bewerken"><button class="btn btn-primary"><i class="fa fa-edit"></i></button></a></td>
             </tr>
           <?php endforeach; ?>

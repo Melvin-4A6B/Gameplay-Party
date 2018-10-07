@@ -50,7 +50,7 @@
                       Nee <input type="radio" name="rolstoel" value="nee">
                     </div>
                     <div class="text-right">
-                        <button type="submit" name="addCinema" class="btn btn-custom">Bioscoop toevoegen</button>
+                        <button type="submit" name="addCinema" class="form-control btn btn-primary">Bioscoop toevoegen</button>
                     </div>
                 </div>
             </form>

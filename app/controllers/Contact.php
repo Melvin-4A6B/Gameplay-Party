@@ -12,8 +12,12 @@ class Contact extends Controller
 
     public function form()
     {
-        if (!Url::post("contact")) {
+        if (!isset($_POST["contact"])) {
             Load::view("contact");
+        }
+        else
+        {
+          $this->sendMail();
         }
     }
 
@@ -23,9 +27,12 @@ class Contact extends Controller
      */
     public function sendMail()
     {
-        $validMail = $this->mail->validateMail($_POST['mail']);
-        $validMsg = $this->mail->validateText($_POST['name']);
-        $validName = $this->mail->validateText($_POST['message']);
+      $data["email"] = "Uw bericht is succesvol verstuurd!";
+      Load::view("contact", $data);
+      
+        $validMail = $this->mail->validateMail(strip_tags($_POST['mail']));
+        $validMsg = $this->mail->validateText(strip_tags($_POST['name']));
+        $validName = $this->mail->validateText(strip_tags($_POST['message']));
 
         if ($validMail && $validMsg && $validName == true) {
             $headers[] = 'MIME-Version: 1.0';
@@ -35,6 +42,7 @@ class Contact extends Controller
             $headers[] = 'Nieuw bericht van Gameplay-party';
 
             mail($email, "Nieuw bericht Gameplay-party", $message, $headers);
+
         }
     }
 }

@@ -5,7 +5,7 @@
     {
       if(isset($_POST["login"]))
       {
-        $this->validate($_POST["email"], $_POST["password"]);
+        $this->validate(strip_tags($_POST["email"]), strip_tags($_POST["password"]));
       }
       else
       {
@@ -29,7 +29,8 @@
       }
       else
       {
-        return false;
+        $data["error"] = "Incorrecte login gegevens";
+        Load::view("login", $data);
       }
     }
 

@@ -1,6 +1,6 @@
 <?php
   define("TITLE", "Gameplay Party");
-  define("BASE_URL", "C:/xampp/htdocs/school/gameplay-party/");
+  define("BASE_URL", "D:/coding/xampp/htdocs/school/gameplay-party/");
   define("ROOT", "http://localhost/school/Gameplay-Party/");
   define("IMG", ROOT . "app/views/images/");
   define("APP_PATH", "app/");

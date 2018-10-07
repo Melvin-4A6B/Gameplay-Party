@@ -14,6 +14,7 @@
       }
       else
       {
+          //hij gaat altijd hier
         Load::view("login");
       }
     }
@@ -22,14 +23,10 @@
     {
       if($this->auth($email, $password))
       {
-        $query = "SELECT * FROM users WHERE email = '".$email."'";
-        if($logged_in = $this->user->check($query))
-        {
           session_start();
           $_SESSION["uid"] = $logged_in;
-        }
 
-        header("Location: ".ROOT);
+          header("Location: ".ROOT);
       }
       else
       {
@@ -42,10 +39,10 @@
     {
       $auth = false;
 
-      $query = "SELECT * FROM users WHERE email = '".$email."' AND password = = '".$password."'";
+      $query = "SELECT * FROM users WHERE email = '".$email."' AND password = '".$password."'";
       $result = $this->user->check($query);
 
-      if($email == $db_email && $password == $db_pass)
+      if($result)
       {
         $auth = true;
       }

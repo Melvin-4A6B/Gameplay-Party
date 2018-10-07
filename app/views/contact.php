@@ -28,7 +28,7 @@
                         <textarea type="text" name="message" class="form-control" style="height: 140px; resize: none;" required></textarea>
                     </div>
                     <div class="text-right">
-                        <button type="submit" name="contact" class=" form-control btn btn-primary">Verzend</button>
+                        <button type="submit" name="contact" class=" form-control btn btn-custom">Verzend</button>
                     </div>
                 </div>
 

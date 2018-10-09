@@ -8,7 +8,13 @@
 
 class Reserveer
 {
-    public function reserve() {
-        Load::view("reserveForm");
+    public function __construct()
+    {
+        $this->db = new Database;
+    }
+
+    public function reserve($id) {
+        $data["tijden"] = $this->db->getAll("SELECT * FROM reservation_times WHERE cinema_id = $id");
+        Load::view("reserveForm", $data);
     }
 }

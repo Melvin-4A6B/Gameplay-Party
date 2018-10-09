@@ -8,7 +8,7 @@
 
     public function get()
     {
-      $query = "SELECT cinema_name, cinema_picture_path, info_url FROM cinemas inner join cinema_pictures on cinema_pictures.cinema_id WHERE cinemas.cinema_id = cinema_pictures.cinema_id";
+      $query = "SELECT * FROM cinemas inner join cinema_pictures on cinema_pictures.cinema_id WHERE cinemas.cinema_id = cinema_pictures.cinema_id";
       $data = $this->model->getBios($query);
 
       return $data;

@@ -42,11 +42,11 @@
                             <input type="text" name="stad" class="form-control">
                         </div>
                     </div>
-                    <?php foreach ($reservations as $reservation): ?>
-                        <select>
-                            <option value='<?= 'test' ?>'><?= 'test' ?></option>
-                        </select>
-                    <?php endforeach; ?>
+                    <label for="">Selecteer gewenste tijd</label>
+                    <select class="form-control mb-5">
+                        <option class="form-control-" class="form-control">15.00 - 17.30</option>
+                    </select>
+
                     <button type="submit" name="addCinema" class="form-control btn btn-primary">Reserveer!</button>
                 </div>
             </form>

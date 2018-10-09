@@ -14,7 +14,8 @@ class Reserveer
     }
 
     public function reserve($id) {
-        $data["tijden"] = $this->db->getAll("SELECT * FROM reservation_times WHERE cinema_id = $id");
+        $data["tijden"] = $this->db->getAll("SELECT * FROM reservation_times INNER JOIN cinemas on reservation_times.cinema_id = cinemas.cinema_id WHERE cinemas.cinema_id = $id");
+        $data["naam"] = $this->db->getAll("SELECT cinema_name FROM cinemas  WHERE cinema_id = $id");
         Load::view("reserveForm", $data);
     }
 }

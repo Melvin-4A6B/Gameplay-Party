@@ -6,16 +6,20 @@
       $this->model = new Admin_model;
     }
 
-    public function beheren()
+    public function accountBeheren()
     {
-      $pageQuery = "SELECT * FROM pages";
       $cinemaQuery = "SELECT * FROM users WHERE role_id = 1";;
-
-      $data["pages"] = $this->model->getContent($pageQuery);
       $data["cinemaUsers"] = $this->model->getContent($cinemaQuery);
-
-      Load::view("beheer", $data);
+      Load::view("accountBeheer", $data);
     }
+
+    public function paginaBeheren()
+      {
+        $pageQuery = "SELECT * FROM pages";
+        $data["pages"] = $this->model->getContent($pageQuery);
+        Load::view("paginaBeheer", $data);
+      }
+
 
     public function pagina_bewerken($id)
     {
@@ -70,13 +74,4 @@
         Load::view("addBios");
       }
     }
-
-    public function getCinemaUsers()
-    {
-      $query = "SELECT * FROM users WHERE role_id = 1";
-      $data["cinemaUsers"] = $this->model->getContent($query);
-
-      return $data;
-    }
-
   }

@@ -1,8 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-custom sticky-top mb-5">
+<nav class="navbar navbar-expand-lg navbar-light sticky-top mb-5">
     <div class="container">
         <a class="navbar-brand" href="<?= ROOT; ?>">
             <!-- <img src="../view/images/gpp.svg" height="60" alt=""> -->
-            <img src="<?= ROOT ?>app/views/images/gpp.svg" style="height: 100px; margin-top: -12px; margin-bottom: -12px;" alt="Logo">
+            <img src="<?= ROOT ?>app/views/images/gpp.svg" class="col-12" style=" margin-top: -13px; margin-left: -15px;" alt="Logo">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,9 +13,6 @@
                 <li class="nav-item">
                     <a class="nav-link a-white" href="<?= ROOT; ?>bioscoop/show/">Reserveren</a>
                 </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link a-white" href="#">Reserveren</a>
-                </li> -->
                 <li class="nav-item">
                     <a class="nav-link a-white" href="<?= ROOT; ?>contact/form">Contact</a>
                 </li>

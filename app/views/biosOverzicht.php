@@ -1,49 +1,60 @@
 <div class="container">
-
-    <h2>Pagina's</h2>
+    <h2>Bioscoop beschikbaarheid</h2>
 
     <div class="table-responsive">
         <table class="table table-bordered">
             <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">Pagina naam</th>
-                <th scope="col">Pagina content</th>
+                <th scope="col">Dag</th>
+                <th scope="col">Begintijd</th>
+                <th scope="col">Eindtijd</th>
                 <th scope="col">Optie</th>
             </tr>
             </thead>
             <tbody>
-            <?php foreach($pages as $page): ?>
-                <tr>
-                    <th scope="row"><?= $page["page_id"]; ?></th>
-                    <td><?= $page["page_name"]; ?></td>
-                    <td><?= substr($page["page_content"], 0, 100); ?></td>
-                    <td><a href="<?= ROOT; ?>admin/pagina_bewerken/<?= $page["page_id"]; ?>" title="Pagina content bewerken"><button class="btn btn-primary"><i class="fa fa-edit"></i></button></a></td>
-                </tr>
-            <?php endforeach; ?>
+            <tr>
+                <?php foreach ($tijden as $tijd): ?>
+                    <td></td>
+                    <td><?= $tijd['start_time']; ?></td>
+                    <td><?= $tijd['end_time']; ?></td>
+                    <td><a title="Tijden bewerken"><button class="btn btn-primary"><i class="fa fa-edit"></i></button></a></td>
+                <?php endforeach; ?>
+            </tr>
             </tbody>
         </table>
     </div>
 
-    <h2>Bioscoop accounts</h2>
+    <h2>Bioscoop informatie</h2>
 
     <div class="table-responsive">
         <table class="table table-bordered">
             <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">Bioscoop</th>
-                <th scope="col">E-mail</th>
-                <th scope="col">Wachtwoord</th>
+                <th scope="col">Straatnaam</th>
+                <th scope="col">Huisnummer</th>
+                <th scope="col">Postcode</th>
+                <th scope="col">Plaats</th>
+                <th scope="col">Provincie</th>
+                <th scope="col">Beschikbaarheid auto</th>
+                <th scope="col">Beschikbaarheid ov</th>
+                <th scope="col">Beschikbaarheid fiets</th>
+                <th scope="col">Rolstoeltoegangkelijkheid</th>
+                <th scope="col">Voorwaarden</th>
             </tr>
             </thead>
             <tbody>
-            <?php foreach($cinemaUsers as $cinemaUser): ?>
+            <?php foreach($data as $info): ?>
                 <tr>
-                    <th scope="row"><?= $cinemaUser["user_id"]; ?></th>
-                    <td><?= substr($cinemaUser["user_name"], 0 ,40); ?></td>
-                    <td><?= substr($cinemaUser["email"], 0 ,40); ?></td>
-                    <td class="cinemaPassword"><?= substr($cinemaUser["password"], 0 ,40); ?></td>
+                    <td><?= $info["street"]; ?></td>
+                    <td><?= $info["house_number"]; ?></td>
+                    <td><?= $info["postal_code"]; ?></td>
+                    <td><?= $info["city"]; ?></td>
+                    <td><?= $info["state"]; ?></td>
+                    <td><?= $info["car_accessibility"]; ?></td>
+                    <td><?= $info["ov_accessibility"]; ?></td>
+                    <td<?= $info["bike_accessibility"]; ?>></td>
+                    <td><?= $info["wheelchair_accessibility"]; ?></td>
+                    <td><?= $info["cinema_conditions"]; ?></td>
                 </tr>
             <?php endforeach; ?>
             </tbody>

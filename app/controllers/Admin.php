@@ -6,14 +6,14 @@
       $this->model = new Admin_model;
     }
 
-    public function accountBeheren()
+    public function accountBeheer()
     {
       $cinemaQuery = "SELECT * FROM users WHERE role_id = 1";;
       $data["cinemaUsers"] = $this->model->getContent($cinemaQuery);
       Load::view("accountBeheer", $data);
     }
 
-    public function paginaBeheren()
+    public function paginaBeheer()
       {
         $pageQuery = "SELECT * FROM pages";
         $data["pages"] = $this->model->getContent($pageQuery);

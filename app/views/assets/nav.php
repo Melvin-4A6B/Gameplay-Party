@@ -49,7 +49,9 @@
                             <?= $_SESSION["uid"]["user_name"]; ?>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="<?= ROOT; ?>admin/beheren/">Beheer</a>
+                          <a class="dropdown-item" href="<?= ROOT; ?>admin/paginaBeheer/">Pagina beheer</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="<?= ROOT; ?>admin/accountBeheer/">Bioscoop beheer</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="<?= ROOT; ?>user/logout/">Afmelden</a>
                         </div>

@@ -2,7 +2,7 @@
     <div class="card">
         <div class="card-body my-4">
             <?php foreach ($naam as $name): ?>
-                <h3 class="card-title text-center mb-4">Reserveren                                     </h3>
+                <h3 class="card-title text-center mb-4">Reserveren</h3>
             <?php endforeach; ?>
             <form method="post" action="#">
                 <div class="col-md-10 m-auto">
@@ -45,12 +45,12 @@
                         </div>
                     </div>
                     <label for="">Selecteer gewenste datum</label>
+                    <select class="form-control mb-5" <?= $disabled[0]; ?>>
+                    <?= $disabled[1]; ?>
                     <?php foreach ($tijden as $tijd): ?>
-                        <select class="form-control mb-5">
-                            <option class="form-control" readonly
-                                    class="form-control"><?= date("D H:i", strtotime($tijd['start_time'])) ?> - <?= date("H:i", strtotime($tijd['end_time'])) ?></option>
+                            <option class="form-control"><?= date("D H:i", strtotime($tijd['start_time'])) ?> - <?= date("H:i", strtotime($tijd['end_time'])) ?></option>
                         <?php endforeach; ?>
-                        </select>
+                    </select>
                     <button type="submit" name="addCinema" class="form-control btn btn-primary">Reserveer!</button>
                 </div>
             </form>

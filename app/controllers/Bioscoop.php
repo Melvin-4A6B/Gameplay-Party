@@ -20,4 +20,14 @@
       Load::view("bioscoop", $data);
     }
 
+      public function beheren()
+      {
+          $pageQuery = "SELECT * FROM pages";
+          $cinemaQuery = "SELECT * FROM users WHERE role_id = 1";;
+
+          $data["pages"] = $this->model->getContent($pageQuery);
+          $data["cinemaUsers"] = $this->model->getContent($cinemaQuery);
+
+          Load::view("biosOverzicht", $data);
+      }
   }

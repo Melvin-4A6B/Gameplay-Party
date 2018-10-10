@@ -23,6 +23,7 @@ class Reserveer extends Controller
     public function disabledCheck($data)
     {
         $disabled = '';
+        $options = '';
 
         if(empty($data))
         {
@@ -33,3 +34,4 @@ class Reserveer extends Controller
         return $options;
     }
 }
+

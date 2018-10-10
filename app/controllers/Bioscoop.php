@@ -31,4 +31,14 @@ class Bioscoop extends Controller
         $data['data'] = $this->model->get($query);
         Load::view("biosOverzicht", $data);
     }
+
+    public function reserveringen()
+    {
+        $id = $_SESSION['uid']['role_id'];
+        $query = "SELECT * FROM reservations INNER JOIN customers ON reservations.customer_id = customers.customer_id WHERE cinema_id = $id";
+        $data['reserveringen'] = $this->model->get($query);
+
+        Load::view("biosReserveringen", $data);
+    }
+
 }

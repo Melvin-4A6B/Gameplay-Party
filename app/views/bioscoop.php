@@ -11,7 +11,7 @@
           <div class="card-body">
             <h5><?= $bioscoop['cinema_name']; ?></h5>
             <a href="https://kinepolis.nl/bioscopen/<?= $bioscoop['info_url']; ?>/info" target="_blank"><button type="button"class="btn btn-primary mt-3">Meer informatie</button></a>
-            <a href="<?= ROOT ?>reserveer/reserve/<?= $bioscoop['cinema_id']; ?>"><button type="button" class="btn btn-custom mt-3">Reserveren</button></a>
+            <a href="<?= ROOT ?>reserveer/bios/<?= $bioscoop['cinema_id']; ?>"><button type="button" class="btn btn-custom mt-3">Reserveren</button></a>
           </div>
         </div>
       </div>

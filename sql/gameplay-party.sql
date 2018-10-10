@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 07 okt 2018 om 18:07
+-- Gegenereerd op: 10 okt 2018 om 08:49
 -- Serverversie: 10.1.32-MariaDB
 -- PHP-versie: 7.2.5
 
@@ -28,7 +28,6 @@ SET time_zone = "+00:00";
 -- Tabelstructuur voor tabel `cinemas`
 --
 
-DROP TABLE IF EXISTS `cinemas`;
 CREATE TABLE `cinemas` (
   `cinema_id` int(11) NOT NULL,
   `cinema_name` varchar(100) NOT NULL,
@@ -70,7 +69,6 @@ INSERT INTO `cinemas` (`cinema_id`, `cinema_name`, `info_url`, `street`, `house_
 -- Tabelstructuur voor tabel `cinema_pictures`
 --
 
-DROP TABLE IF EXISTS `cinema_pictures`;
 CREATE TABLE `cinema_pictures` (
   `cinema_picture_id` int(11) NOT NULL,
   `cinema_id` int(11) NOT NULL,
@@ -102,7 +100,6 @@ INSERT INTO `cinema_pictures` (`cinema_picture_id`, `cinema_id`, `cinema_picture
 -- Tabelstructuur voor tabel `customers`
 --
 
-DROP TABLE IF EXISTS `customers`;
 CREATE TABLE `customers` (
   `customer_id` int(11) NOT NULL,
   `first_name` varchar(50) NOT NULL,
@@ -122,7 +119,6 @@ CREATE TABLE `customers` (
 -- Tabelstructuur voor tabel `pages`
 --
 
-DROP TABLE IF EXISTS `pages`;
 CREATE TABLE `pages` (
   `page_id` int(11) NOT NULL,
   `page_name` varchar(50) NOT NULL,
@@ -143,7 +139,6 @@ INSERT INTO `pages` (`page_id`, `page_name`, `page_slug`, `page_content`) VALUES
 -- Tabelstructuur voor tabel `reservations`
 --
 
-DROP TABLE IF EXISTS `reservations`;
 CREATE TABLE `reservations` (
   `reservation_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
@@ -163,14 +158,19 @@ CREATE TABLE `reservations` (
 -- Tabelstructuur voor tabel `reservation_times`
 --
 
-DROP TABLE IF EXISTS `reservation_times`;
 CREATE TABLE `reservation_times` (
   `id` int(11) NOT NULL,
   `cinema_id` int(11) NOT NULL,
-  `date` datetime NOT NULL,
   `start_time` datetime NOT NULL,
   `end_time` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `reservation_times`
+--
+
+INSERT INTO `reservation_times` (`id`, `cinema_id`, `start_time`, `end_time`) VALUES
+(1, 1, '2018-10-09 17:00:00', '2018-10-09 19:00:00');
 
 -- --------------------------------------------------------
 
@@ -178,7 +178,6 @@ CREATE TABLE `reservation_times` (
 -- Tabelstructuur voor tabel `roles`
 --
 
-DROP TABLE IF EXISTS `roles`;
 CREATE TABLE `roles` (
   `role_id` int(11) NOT NULL,
   `role_name` varchar(50) NOT NULL
@@ -201,7 +200,6 @@ INSERT INTO `roles` (`role_id`, `role_name`) VALUES
 -- Tabelstructuur voor tabel `rooms`
 --
 
-DROP TABLE IF EXISTS `rooms`;
 CREATE TABLE `rooms` (
   `room_id` int(11) NOT NULL,
   `cinema_id` int(11) NOT NULL,
@@ -218,7 +216,6 @@ CREATE TABLE `rooms` (
 -- Tabelstructuur voor tabel `users`
 --
 
-DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `user_id` int(11) NOT NULL,
   `role_id` int(11) NOT NULL,
@@ -336,7 +333,7 @@ ALTER TABLE `reservations`
 -- AUTO_INCREMENT voor een tabel `reservation_times`
 --
 ALTER TABLE `reservation_times`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT voor een tabel `roles`

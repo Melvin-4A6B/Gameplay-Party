@@ -6,7 +6,7 @@
  * Time: 16:22
  */
 
-class Reserveer
+class Reserveer extends Controller
 {
     public function __construct()
     {

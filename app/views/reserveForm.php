@@ -45,16 +45,12 @@
                         </div>
                     </div>
                     <label for="">Selecteer gewenste datum</label>
-                    <select class="form-control mb-5">
-                        <?php foreach ($tijden as $tijd): ?>
-                        <?php if ($tijd == ""): ?>
-                        <?php else: ?>
+                    <?php foreach ($tijden as $tijd): ?>
+                        <select class="form-control mb-5">
                             <option class="form-control" readonly
-                                    class="form-control"><?= date("D H:i", strtotime($tijd['start_time'])) ?>
-                                - <?= date("H:i", strtotime($tijd['end_time'])) ?></option>
-                        <?php endif; ?>
+                                    class="form-control"><?= date("D H:i", strtotime($tijd['start_time'])) ?> - <?= date("H:i", strtotime($tijd['end_time'])) ?></option>
                         <?php endforeach; ?>
-                    </select>
+                        </select>
                     <button type="submit" name="addCinema" class="form-control btn btn-primary">Reserveer!</button>
                 </div>
             </form>

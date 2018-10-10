@@ -52,7 +52,7 @@
                     <td><?= $info["state"]; ?></td>
                     <td><?= $info["car_accessibility"]; ?></td>
                     <td><?= $info["ov_accessibility"]; ?></td>
-                    <td<?= $info["bike_accessibility"]; ?>></td>
+                    <td<?=  $info["bike_accessibility"]; ?>></td>
                     <td><?= $info["wheelchair_accessibility"]; ?></td>
                     <td><?= $info["cinema_conditions"]; ?></td>
                 </tr>

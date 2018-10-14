@@ -3,7 +3,7 @@
     <hr>
     <div class="row">
         <?php foreach ($bioscopen as $bioscoop): ?>
-            <div class="col-sm-4" style="padding: 20px;">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12" style="">
                 <div class="card">
                     <div class="card-head">
                         <img src="<?= IMG . "bioscopen/" . $bioscoop['cinema_picture_path']; ?>" class="img-fluid w-100"

@@ -50,7 +50,13 @@
                             <?= $_SESSION["uid"]["user_name"]; ?>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+<<<<<<< HEAD
                             <a class="dropdown-item  a-blue" href="<?= ROOT; ?>admin/beheren/">Beheer</a>
+=======
+                          <a class="dropdown-item" href="<?= ROOT; ?>admin/paginaBeheer/">Pagina beheer</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="<?= ROOT; ?>admin/accountBeheer/">Bioscoop beheer</a>
+>>>>>>> 8c91b89a80a36c7619af5fd056c4472e5c058ba6
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item  a-blue" href="<?= ROOT; ?>user/logout/">Afmelden</a>
                         </div>

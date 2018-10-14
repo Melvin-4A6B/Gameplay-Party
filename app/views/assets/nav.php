@@ -1,13 +1,11 @@
 <nav class="navbar navbar-expand-lg navbar-light sticky-top mb-2">
     <div class="container">
-        <a class="navbar-brand col-md-8 col-9" href="<?= ROOT; ?>">
-            <!-- <img src="../view/images/gpp.svg" height="60" alt=""> -->
-
-            <img src="<?= ROOT ?>app/views/images/gpp.svg" class="col-md-9 col-12" style=" margin-top: -20px; margin-left: -30px;" alt="Logo">
+        <a class="navbar-brand" href="<?= ROOT; ?>">
+            <img src="<?= ROOT ?>app/views/images/gpp.svg" class="col-md-8 col-12" style=" margin-top: -20px; margin-left: -13px;" alt="Logo">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <button style="position: absolute; left: 80.5%; background: #fff" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false">
+            <span  class="navbar-toggler-icon" ></span>
         </button>
         <div class="collapse navbar-collapse " id="navbarSupportedContent">
             <ul class="navbar-nav bg-custom mr-auto">

@@ -5,6 +5,9 @@
 * {
     font-family: 'Quicksand', sans-serif !important;
 }
+body {
+    overflow-x: hidden;
+}
 
 .container {
     /* ONLY FOR DEBUG PURPOSES*/

@@ -29,7 +29,7 @@
             <?php elseif ($_SESSION["uid"]["role_id"] == 1): // Cinemas ?>
                 <ul class="navbar-nav mr-right bg-orange">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        <a class="nav-link dropdown-toggle a-white pl-3" href="#" id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <?= $_SESSION["uid"]["user_name"]; ?>
                         </a>
@@ -45,7 +45,7 @@
             <?php elseif ($_SESSION["uid"]["role_id"] == 3): // Cokamel ?>
                 <ul class="navbar-nav mr-right  bg-orange">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle a-blue" href="#" id="navbarDropdown" role="button"
+                        <a class="nav-link dropdown-toggle a-white pl-3" href="#" id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <?= $_SESSION["uid"]["user_name"]; ?>
                         </a>
@@ -62,7 +62,7 @@
             <?php elseif ($_SESSION["uid"]["role_id"] == 4): // Peter / Jack ?>
                 <ul class="navbar-nav mr-right  bg-orange">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle  a-blue" href="#" id="navbarDropdown" role="button"
+                        <a class="nav-link dropdown-toggle pl-3 a-white" href="#" id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <?= $_SESSION["uid"]["user_name"]; ?>
                         </a>
@@ -78,7 +78,7 @@
             <?php elseif ($_SESSION["uid"]["role_id"] == 5): // Hanneke ?>
                 <ul class="navbar-nav mr-right  bg-orange">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle a-white" href="#" id="navbarDropdown" role="button"
+                        <a class="nav-link dropdown-toggle a-white pl-3" href="#" id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <?= $_SESSION["uid"]["user_name"]; ?>
                         </a>

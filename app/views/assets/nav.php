@@ -1,11 +1,13 @@
 <nav class="navbar navbar-expand-lg navbar-light sticky-top mb-2">
     <div class="container">
         <a class="navbar-brand" href="<?= ROOT; ?>">
-            <img src="<?= ROOT ?>app/views/images/gpp.svg" class="col-md-8 col-12" style=" margin-top: -20px; margin-left: -13px;" alt="Logo">
+            <img src="<?= ROOT ?>app/views/images/gpp.svg" class="col-md-8 col-12"
+                 style=" margin-top: -20px; margin-left: -13px;" alt="Logo">
         </a>
-        <button style="position: absolute; left: 80.5%; background: #fff" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        <button style="position: absolute; left: 80.5%; background: #fff" class="navbar-toggler" type="button"
+                data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false">
-            <span  class="navbar-toggler-icon" ></span>
+            <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse " id="navbarSupportedContent">
             <ul class="navbar-nav bg-custom mr-auto">
@@ -25,9 +27,9 @@
                     </li>
                 </ul>
             <?php elseif ($_SESSION["uid"]["role_id"] == 1): // Cinemas ?>
-                <ul class="navbar-nav mr-right">
+                <ul class="navbar-nav mr-right bg-orange">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle a-white" href="#" id="navbarDropdown" role="button"
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <?= $_SESSION["uid"]["user_name"]; ?>
                         </a>
@@ -41,27 +43,24 @@
                     </li>
                 </ul>
             <?php elseif ($_SESSION["uid"]["role_id"] == 3): // Cokamel ?>
-                <ul class="navbar-nav mr-right">
+                <ul class="navbar-nav mr-right  bg-orange">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle a-blue" href="#" id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <?= $_SESSION["uid"]["user_name"]; ?>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-<<<<<<< HEAD
                             <a class="dropdown-item  a-blue" href="<?= ROOT; ?>admin/beheren/">Beheer</a>
-=======
-                          <a class="dropdown-item" href="<?= ROOT; ?>admin/paginaBeheer/">Pagina beheer</a>
-                          <div class="dropdown-divider"></div>
-                          <a class="dropdown-item" href="<?= ROOT; ?>admin/accountBeheer/">Bioscoop beheer</a>
->>>>>>> 8c91b89a80a36c7619af5fd056c4472e5c058ba6
+                            <a class="dropdown-item" href="<?= ROOT; ?>admin/paginaBeheer/">Pagina beheer</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="<?= ROOT; ?>admin/accountBeheer/">Bioscoop beheer</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item  a-blue" href="<?= ROOT; ?>user/logout/">Afmelden</a>
                         </div>
                     </li>
                 </ul>
             <?php elseif ($_SESSION["uid"]["role_id"] == 4): // Peter / Jack ?>
-                <ul class="navbar-nav mr-right">
+                <ul class="navbar-nav mr-right  bg-orange">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle  a-blue" href="#" id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -77,9 +76,9 @@
                     </li>
                 </ul>
             <?php elseif ($_SESSION["uid"]["role_id"] == 5): // Hanneke ?>
-                <ul class="navbar-nav mr-right">
+                <ul class="navbar-nav mr-right  bg-orange">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle a-blue" href="#" id="navbarDropdown" role="button"
+                        <a class="nav-link dropdown-toggle a-white" href="#" id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <?= $_SESSION["uid"]["user_name"]; ?>
                         </a>

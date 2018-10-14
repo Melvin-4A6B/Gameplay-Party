@@ -40,10 +40,6 @@ body {
     transition: all 300ms;
 }
 
-.a-white:hover {
-    color: lightgray !important;
-}
-
 .a-blue {
     font-size: 1.25em;
     color: #2c3e50 !important;

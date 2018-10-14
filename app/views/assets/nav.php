@@ -4,7 +4,7 @@
             <img src="<?= ROOT ?>app/views/images/gpp.svg" class="col-md-8 col-12"
                  style=" margin-top: -20px; margin-left: -13px;" alt="Logo">
         </a>
-        <button style="position: absolute; left: 80.5%; background: #fff" class="navbar-toggler" type="button"
+        <button style="position: sticky; left: 80.5%; margin-top: -80px; background: #fff" class="navbar-toggler" type="button"
                 data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false">
             <span class="navbar-toggler-icon"></span>
@@ -12,10 +12,10 @@
         <div class="collapse navbar-collapse " id="navbarSupportedContent">
             <ul class="navbar-nav bg-custom mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link a-white pl-3" href="<?= ROOT; ?>bioscoop/show/">Reserveren</a>
+                    <a class="nav-link a-white pl-1" href="<?= ROOT; ?>bioscoop/show/">Reserveren</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link a-white pl-3 pr-3" href="<?= ROOT; ?>contact/form">Contact</a>
+                    <a class="nav-link a-white pl-1" href="<?= ROOT; ?>contact/form">Contact</a>
                 </li>
             </ul>
             <?php
@@ -29,7 +29,7 @@
             <?php elseif ($_SESSION["uid"]["role_id"] == 1): // Cinemas ?>
                 <ul class="navbar-nav mr-right bg-orange">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle a-white pl-3" href="#" id="navbarDropdown" role="button"
+                        <a class="nav-link dropdown-toggle a-white" href="#" id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <?= $_SESSION["uid"]["user_name"]; ?>
                         </a>
@@ -45,7 +45,7 @@
             <?php elseif ($_SESSION["uid"]["role_id"] == 3): // Cokamel ?>
                 <ul class="navbar-nav mr-right  bg-orange">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle a-white pl-3" href="#" id="navbarDropdown" role="button"
+                        <a class="nav-link dropdown-toggle a-white" href="#" id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <?= $_SESSION["uid"]["user_name"]; ?>
                         </a>
@@ -62,7 +62,7 @@
             <?php elseif ($_SESSION["uid"]["role_id"] == 4): // Peter / Jack ?>
                 <ul class="navbar-nav mr-right  bg-orange">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle pl-3 a-white" href="#" id="navbarDropdown" role="button"
+                        <a class="nav-link dropdown-toggle a-white" href="#" id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <?= $_SESSION["uid"]["user_name"]; ?>
                         </a>
@@ -76,9 +76,9 @@
                     </li>
                 </ul>
             <?php elseif ($_SESSION["uid"]["role_id"] == 5): // Hanneke ?>
-                <ul class="navbar-nav mr-right  bg-orange">
+                <ul class="navbar-nav mr-right bg-orange">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle a-white pl-3" href="#" id="navbarDropdown" role="button"
+                        <a class="nav-link dropdown-toggle a-white pl-1" href="#" id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <?= $_SESSION["uid"]["user_name"]; ?>
                         </a>

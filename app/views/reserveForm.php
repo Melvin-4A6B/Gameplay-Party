@@ -16,23 +16,23 @@
                             <input type="text" name="straatnaam" class="form-control">
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label for="">Telefoonnummer </label>
+                        <input type="tel" name="huisnummer" class="form-control">
+                    </div>
                     <div class="form-row mb-3">
                         <div class="col-md-7 mt-1 ">
                             <label for="">Straatnaam</label>
                             <input type="text" name="postcode" class="form-control">
                         </div>
                         <div class="col-md-3 col-sm-8 mt-1">
-                            <label for="">Straatnummer</label>
+                            <label for="">Huisnummer</label>
                             <input type="number" name="plaats" class="form-control">
                         </div>
                         <div class="col-md-2 col-sm-4 mt-1">
                             <label for="">Toevoeging</label>
                             <input type="text" name="stad" class="form-control">
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="">Telefoonnummer </label>
-                        <input type="tel" name="huisnummer" class="form-control">
                     </div>
                     <div class="form-row mb-4">
                         <div class="col-md-7">

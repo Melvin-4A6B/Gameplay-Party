@@ -4,9 +4,9 @@
             <div class="col-md">
                 <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
-                        <img src="<?= ROOT ?>app\views\images\party.jpeg" class="my-5 w-100" alt="Header image"
+                        <img src="<?= ROOT ?>app\views\images\party.jpg" class="my-5 w-100" alt="Header image"
                              title="Header image">
-                        <div class="carousel-caption d-none d-md-block mb-2 h-50">
+                        <div class="carousel-caption d-none d-md-block mb-2 h-75">
                             <h1>Welkom bij Gameplay-Party</h1>
                             <h5>De grootste party organisatie van Nederland!</h5>
                         </div>

@@ -3,12 +3,12 @@
 */
 
 * {
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Quicksand', sans-serif !important;
 }
 
 .container {
     /* ONLY FOR DEBUG PURPOSES*/
-    /* background-color: grey; */
+     /*background-color: grey !important;*/
 }
 
 .btn-primary {
@@ -32,7 +32,8 @@
 
 /* color for nav items*/
 .a-white {
-    color: #ffffff !important;
+    font-size: 1.25em;
+    color: #fff !important;
     transition: all 300ms;
 }
 
@@ -40,9 +41,20 @@
     color: lightgray !important;
 }
 
+.a-blue {
+    font-size: 1.25em;
+    color: #2c3e50 !important;
+    transition: all 300ms;
+}
+
 .bg-custom {
     background: #006266;
 }
+
+.bg-orange {
+    background: #FFC312;
+}
+
 
 .fa-facebook-square {
     color: #fff;
@@ -69,4 +81,7 @@
 
 .form-control {
     border-radius: 0px !important;
+}
+.img-shadow {
+    box-shadow: #ffffff 5px 5px 5px;
 }

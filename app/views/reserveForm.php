@@ -2,7 +2,7 @@
     <div class="card">
         <div class="card-body my-4">
             <?php foreach ($naam as $name): ?>
-                <h3 class="card-title text-center mb-4">Reserveren</h3>
+                <h3 class="card-title text-center mb-4">Reserveren voor <?= $name['cinema_name']?></h3>
             <?php endforeach; ?>
             <form method="post" action="#">
                 <div class="col-md-10 m-auto">

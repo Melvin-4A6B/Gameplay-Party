@@ -10,6 +10,16 @@
 
     <link rel="stylesheet" href="<?= ROOT; ?>public/css/style.css">
     <title><?= TITLE; ?></title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126724303-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-126724303-1');
+    </script>
 </head>
 <body>
 <?php require_once("nav.php"); ?>

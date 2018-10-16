@@ -23,7 +23,7 @@
                 ?>
                 <ul class="navbar-nav mr-right bg-custom">
                     <li class="nav-item">
-                        <a class="nav-link  a-white pl-3" href="<?= ROOT; ?>user/login/">Login</a>
+                        <a class="nav-link  a-white pl-1" href="<?= ROOT; ?>user/login/">Login</a>
                     </li>
                 </ul>
             <?php elseif ($_SESSION["uid"]["role_id"] == 1): // Cinemas ?>

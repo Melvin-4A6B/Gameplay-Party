@@ -48,8 +48,7 @@
                     <select class="form-control mb-3" <?= $disabled[0]; ?>>
                         <?= $disabled[1]; ?>
                         <?php foreach ($tijden as $tijd): ?>
-                            <option class="form-control"><?= date("D H:i", strtotime($tijd['start_time'])) ?>
-                                - <?= date("H:i", strtotime($tijd['end_time'])) ?></option>
+                            <option class="form-control"><?= $dag[date("N", strtotime($tijd['start_time']))] . " " .  date("d-m-Y", strtotime($tijd['end_time'])) . " van " . date("H:i", strtotime($tijd['start_time'])) ?> - <?= date("H:i", strtotime($tijd['end_time'])) ." zaal " . $zaal; ?></option>
                         <?php endforeach; ?>
                     </select>
                     <label for="">Aantal personen</label>

@@ -17,7 +17,7 @@
                     <td><?= date("d-m-Y", strtotime($tijd['end_time'])) ?></td>
                     <td><?= $dag[date("N", strtotime($tijd['start_time']))] ?></td>
                     <td><?= date("H:i", strtotime($tijd['start_time'])) ?> - <?= date("H:i", strtotime($tijd['end_time'])) ?></td>
-                    <td><a title="Tijden bewerken"><button class="btn btn-primary"><i class="fab fa-edit"></i></button></a></td>
+                    <td><a title="Tijden bewerken"><button class="btn btn-primary"><i class="far fa-edit"></i></button></a></td>
                 <?php endforeach; ?>
             </tr>
             </tbody>

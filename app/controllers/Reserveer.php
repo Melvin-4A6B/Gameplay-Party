@@ -13,7 +13,8 @@ class Reserveer extends Controller
         $this->model = new Bios_model;
     }
 
-    public function bios($id) {
+    public function bios($id)
+    {
         $data["tijden"] = $this->model->get("SELECT * FROM reservation_times INNER JOIN cinemas on reservation_times.cinema_id = cinemas.cinema_id WHERE cinemas.cinema_id = $id");
         $data["naam"] = $this->model->get("SELECT cinema_name FROM cinemas  WHERE cinema_id = $id");
         $data["disabled"] = self::disabledCheck($data['tijden']);
@@ -37,12 +38,40 @@ class Reserveer extends Controller
         $disabled = '';
         $options = '';
 
-        if(empty($data))
-        {
+        if (empty($data)) {
             $disabled = "disabled";
             $empty = "<option value=''>Geen tijden beschikbaar</option>";
             $options = array($disabled, $empty);
         }
         return $options;
+    }
+
+    public function process()
+    {
+        if (isset($_POST['reserveer'])) {
+            $data['firstName'] = self::sanitize(Url::post("voornaam"));
+            $data['lastName'] = self::sanitize(Url::post("achternaam"));
+            $data['phone'] = self::sanitize(Url::post("telefoonnummer"));
+            $data['streetname'] = self::sanitize(Url::post("straatnaam"));
+            $data['houseNumber'] = self::sanitize(Url::post("huisnummer"));
+            $data['addition'] = self::sanitize(Url::post("toevoeging"));
+            $data['city'] = self::sanitize(Url::post("stad"));
+            $data['postalCode'] = self::sanitize(Url::post("postcode"));
+            $data['persons'] = self::sanitize(Url::post("aantal_personen"));
+
+            $date = explode(" ", Url::post("datum") );
+
+            $data['day'] = $date[2];
+            $data['endTime'] = $date[4];
+            $data['beginTime'] = $date[5];
+
+//            $this->model->insert('customers', $data);
+//            $this->model->insert('reservations', $res);
+//            self::debug($data);
+            $data['msg'] = "uw reservering is succesvol verwerkt";
+            Load::view('reserveForm', $data);
+        } else {
+            Load::view('reserveForm');
+        }
     }
 }

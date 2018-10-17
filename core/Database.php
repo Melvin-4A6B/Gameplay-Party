@@ -1,6 +1,6 @@
 <?php
 
-class Database
+class Database extends Controller
 {
 
     function __construct()
@@ -13,6 +13,42 @@ class Database
         } catch (PDOException $e) {
             echo $e->getMessage();
         }
+    }
+
+    public function insert($table, $params)
+    {
+        $args = '';
+
+        // Get column names
+        $result = $this->conn->prepare("DESCRIBE $table");
+        $result->execute();
+        $fields = $result->fetchAll(PDO::FETCH_COLUMN);
+
+        // Remove the id (first element)
+        array_shift($fields);
+
+        // Make a string from the fields array
+        $fields = implode(', ', $fields);
+//        self::debug($fields);
+
+        // Loop through each param
+        foreach($params as $key => $value)
+        {
+            $args .= ':' . $key . ', ';
+            $binds[':' . $key] = $value;
+        }
+
+        // Remove the last comma
+        $args = rtrim($args, ', ');
+
+        $query = "INSERT INTO " . $table . "(" . $fields . ") VALUES (" . $args . ")";
+//        self::debug($args);
+
+        $result = $this->conn->prepare($query);
+
+        // Execute the bindings
+        $result->execute($binds);
+
     }
 
     public function create($sql)

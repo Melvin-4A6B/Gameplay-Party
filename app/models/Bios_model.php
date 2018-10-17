@@ -14,4 +14,10 @@ class Bios_model
 
         return $data;
     }
+
+    public function insert($table, $values) {
+        $data = $this->db->insert($table, $values);
+
+        return $data;
+    }
 }

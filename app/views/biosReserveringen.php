@@ -11,8 +11,8 @@
                 <th scope="col">Begintijd</th>
                 <th scope="col">Eindtijd</th>
                 <th scope="col">Aantal personen</th>
-                <th scope="col">Subtotaal</th>
-                <th scope="col">Totaal</th>
+<!--                <th scope="col">Subtotaal</th>-->
+<!--                <th scope="col">Totaal</th>-->
             </tr>
             </thead>
             <tbody>
@@ -24,8 +24,8 @@
                     <td><?= $reservering["begin_time"]; ?></td>
                     <td><?= $reservering["end_time"]; ?></td>
                     <td><?= $reservering["amount_persons"]; ?></td>
-                    <td>&euro;<?= $reservering["subtotal"]; ?></td>
-                    <td>&euro;<?= $reservering["total"]; ?></td>
+<!--                    <td>&euro;--><?//= $reservering["subtotal"]; ?><!--</td>-->
+<!--                    <td>&euro;--><?//= $reservering["total"]; ?><!--</td>-->
                 <?php endforeach; ?>
             </tr>
             </tbody>

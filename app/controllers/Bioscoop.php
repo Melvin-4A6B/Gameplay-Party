@@ -34,6 +34,7 @@ class Bioscoop extends Controller
             7 => 'Zondag'
         );
 
+        $data['dag'] = $days;
         $query = "SELECT * FROM reservation_times";
         $data['tijden'] = $this->model->get($query);
         $id = $_SESSION['uid']['user_id'];

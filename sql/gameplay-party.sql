@@ -1,4 +1,12 @@
-﻿
+-- phpMyAdmin SQL Dump
+-- version 4.8.0.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Gegenereerd op: 17 okt 2018 om 09:44
+-- Serverversie: 10.1.32-MariaDB
+-- PHP-versie: 7.2.5
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
@@ -20,7 +28,6 @@ SET time_zone = "+00:00";
 -- Tabelstructuur voor tabel `cinemas`
 --
 
-DROP TABLE IF EXISTS `cinemas`;
 CREATE TABLE `cinemas` (
   `cinema_id` int(11) NOT NULL,
   `cinema_name` varchar(100) NOT NULL,
@@ -62,7 +69,6 @@ INSERT INTO `cinemas` (`cinema_id`, `cinema_name`, `info_url`, `street`, `house_
 -- Tabelstructuur voor tabel `cinema_pictures`
 --
 
-DROP TABLE IF EXISTS `cinema_pictures`;
 CREATE TABLE `cinema_pictures` (
   `cinema_picture_id` int(11) NOT NULL,
   `cinema_id` int(11) NOT NULL,
@@ -94,7 +100,6 @@ INSERT INTO `cinema_pictures` (`cinema_picture_id`, `cinema_id`, `cinema_picture
 -- Tabelstructuur voor tabel `customers`
 --
 
-DROP TABLE IF EXISTS `customers`;
 CREATE TABLE `customers` (
   `customer_id` int(11) NOT NULL,
   `first_name` varchar(50) NOT NULL,
@@ -114,7 +119,6 @@ CREATE TABLE `customers` (
 -- Tabelstructuur voor tabel `pages`
 --
 
-DROP TABLE IF EXISTS `pages`;
 CREATE TABLE `pages` (
   `page_id` int(11) NOT NULL,
   `page_name` varchar(50) NOT NULL,
@@ -132,10 +136,25 @@ INSERT INTO `pages` (`page_id`, `page_name`, `page_slug`, `page_content`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Tabelstructuur voor tabel `prices`
+--
+
+CREATE TABLE `prices` (
+  `price_id` int(11) NOT NULL,
+  `reservation_id` int(11) NOT NULL,
+  `service` varchar(50) NOT NULL,
+  `name_service` varchar(50) NOT NULL,
+  `price_service` int(11) NOT NULL,
+  `name_upgrade` varchar(50) NOT NULL,
+  `price_upgrade` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Tabelstructuur voor tabel `reservations`
 --
 
-DROP TABLE IF EXISTS `reservations`;
 CREATE TABLE `reservations` (
   `reservation_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
@@ -143,10 +162,7 @@ CREATE TABLE `reservations` (
   `reservation_date` datetime NOT NULL,
   `begin_time` datetime NOT NULL,
   `end_time` datetime NOT NULL,
-  `amount_persons` int(11) NOT NULL,
-  `subtotal` double NOT NULL,
-  `total` double NOT NULL,
-  `reserved` enum('0','1') NOT NULL DEFAULT '0'
+  `amount_persons` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -155,7 +171,6 @@ CREATE TABLE `reservations` (
 -- Tabelstructuur voor tabel `reservation_times`
 --
 
-DROP TABLE IF EXISTS `reservation_times`;
 CREATE TABLE `reservation_times` (
   `id` int(11) NOT NULL,
   `cinema_id` int(11) NOT NULL,
@@ -168,8 +183,8 @@ CREATE TABLE `reservation_times` (
 -- Gegevens worden geëxporteerd voor tabel `reservation_times`
 --
 
-INSERT INTO `reservation_times` (`id`, `cinema_id`, `start_time`, `end_time`) VALUES
-(1, 1, '2018-10-09 17:00:00', '2018-10-09 19:00:00');
+INSERT INTO `reservation_times` (`id`, `cinema_id`, `room_id`, `start_time`, `end_time`) VALUES
+(1, 1, 0, '2018-10-09 17:00:00', '2018-10-09 19:00:00');
 
 -- --------------------------------------------------------
 
@@ -177,7 +192,6 @@ INSERT INTO `reservation_times` (`id`, `cinema_id`, `start_time`, `end_time`) VA
 -- Tabelstructuur voor tabel `roles`
 --
 
-DROP TABLE IF EXISTS `roles`;
 CREATE TABLE `roles` (
   `role_id` int(11) NOT NULL,
   `role_name` varchar(50) NOT NULL
@@ -200,7 +214,6 @@ INSERT INTO `roles` (`role_id`, `role_name`) VALUES
 -- Tabelstructuur voor tabel `rooms`
 --
 
-DROP TABLE IF EXISTS `rooms`;
 CREATE TABLE `rooms` (
   `room_id` int(11) NOT NULL,
   `cinema_id` int(11) NOT NULL,
@@ -223,7 +236,6 @@ INSERT INTO `rooms` (`room_id`, `cinema_id`, `amount_chairs`, `wheelchair_places
 -- Tabelstructuur voor tabel `users`
 --
 
-DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `user_id` int(11) NOT NULL,
   `role_id` int(11) NOT NULL,
@@ -269,6 +281,13 @@ ALTER TABLE `customers`
 --
 ALTER TABLE `pages`
   ADD PRIMARY KEY (`page_id`);
+
+--
+-- Indexen voor tabel `prices`
+--
+ALTER TABLE `prices`
+  ADD PRIMARY KEY (`price_id`),
+  ADD UNIQUE KEY `reservation_id` (`reservation_id`);
 
 --
 -- Indexen voor tabel `reservations`
@@ -383,7 +402,8 @@ ALTER TABLE `reservations`
 -- Beperkingen voor tabel `reservation_times`
 --
 ALTER TABLE `reservation_times`
-   ADD CONSTRAINT `reservation_times_ibfk_1` FOREIGN KEY (`cinema_id`) REFERENCES `cinemas` (`cinema_id`);
+  ADD CONSTRAINT `reservation_times_ibfk_1` FOREIGN KEY (`cinema_id`) REFERENCES `cinemas` (`cinema_id`);
+
 --
 -- Beperkingen voor tabel `rooms`
 --

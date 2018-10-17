@@ -6,7 +6,8 @@
             </h5>
             <div class="col-md-12 text-center mt-2">
                 <a href="https://www.facebook.com/Kinepolis.Nederland/" target="_blank" title="Facebook" >
-                    <i class="fa fa-facebook-square a-white"></i>
+<!--                    <i class="fa fa-facebook-square a-white"></i>-->
+                    <i class="fab fa-facebook-square"></i>
                 </a>
             </div>
 

@@ -24,11 +24,22 @@ class Bioscoop extends Controller
 
     public function beheren()
     {
+        $days = array(
+            1 => 'Maandag',
+            2 => 'Dinsdag',
+            3 => 'Woensdag',
+            4 => 'Donderdag',
+            5 => 'Vrijdag',
+            6 => 'Zaterdag',
+            7 => 'Zondag'
+        );
+
         $query = "SELECT * FROM reservation_times";
         $data['tijden'] = $this->model->get($query);
         $id = $_SESSION['uid']['user_id'];
         $query = "SELECT * FROM cinemas WHERE cinema_id = $id";
         $data['data'] = $this->model->get($query);
+        $data['dag'] = $days;
         Load::view("biosOverzicht", $data);
     }
 

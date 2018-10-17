@@ -5,19 +5,19 @@
         <table class="table table-bordered">
             <thead>
             <tr>
+                <th scope="col">Datum</th>
                 <th scope="col">Dag</th>
-                <th scope="col">Begintijd</th>
-                <th scope="col">Eindtijd</th>
+                <th scope="col">Tijd</th>
                 <th scope="col">Optie</th>
             </tr>
             </thead>
             <tbody>
             <tr>
                 <?php foreach ($tijden as $tijd): ?>
-                    <td></td>
-                    <td><?= $tijd['start_time']; ?></td>
-                    <td><?= $tijd['end_time']; ?></td>
-                    <td><a title="Tijden bewerken"><button class="btn btn-primary"><i class="fa fa-edit"></i></button></a></td>
+                    <td><?= date("d-m-Y", strtotime($tijd['end_time'])) ?></td>
+                    <td><?= $dag[date("N", strtotime($tijd['start_time']))] ?></td>
+                    <td><?= date("H:i", strtotime($tijd['start_time'])) ?> - <?= date("H:i", strtotime($tijd['end_time'])) ?></td>
+                    <td><a title="Tijden bewerken"><button class="btn btn-primary"><i class="fab fa-edit"></i></button></a></td>
                 <?php endforeach; ?>
             </tr>
             </tbody>

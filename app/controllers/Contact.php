@@ -1,21 +1,18 @@
-<?php require_once BASE_URL . 'app\models\Mail_model.php';
-
-/**
- * Class Contact
- */
+<?php
 class Contact extends Controller
 {
-    public function __construct()
-    {
-        $this->mail = new Mail_model();
-    }
 
     public function form()
     {
         if (!isset($_POST["contact"])) {
             Load::view("contact");
         } else {
-            $this->sendMail();
+            $data["email"] = "Uw bericht is succesvol verstuurd!";
+            Load::view("contact", $data);
+            exit();
+            // $from = self::sanitize(Url::post("mail"));
+            // $msg = self::sanitize(Url::post("message"));
+            // $this->sendEmail($from, $msg);
         }
     }
 
@@ -23,24 +20,15 @@ class Contact extends Controller
      * @param $email string - email from contact form
      * @param $message string - message from contact form
      */
-    public function sendMail()
+    public function sendEmail($from, $msg)
     {
-        $data["email"] = "Uw bericht is succesvol verstuurd!";
-        Load::view("contact", $data);
-
-        $validMail = $this->mail->validateMail(strip_tags($_POST['mail']));
-        $validMsg = $this->mail->validateText(strip_tags($_POST['name']));
-        $validName = $this->mail->validateText(strip_tags($_POST['message']));
-
-        if ($validMail == true && $validMsg == true && $validName == true) {
-            $headers[] = 'MIME-Version: 1.0';
-            $headers[] = 'Content-type: text/html; charset=iso-8859-1';
-            // Additional headers
-            $headers[] = 'To: Gameplay-party';
-            $headers[] = 'Nieuw bericht van Gameplay-party';
-
-            mail($email, "Nieuw bericht Gameplay-party", $message, $headers);
-
-        }
+        $to      = 'coding.socializer@gmail.com';
+        $subject = 'Contact';
+        $message = "<p>test bericht</p>";
+        $headers = "MIME-Version: 1.0" . "\r\n";
+        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+        $headers .= 'From: no-reply@socializer.com' . "\r\n";
+        $headers .= 'Cc: coding.socializer@gmail.com' . "\r\n";
+        mail($to, $subject, $message, $headers);
     }
 }

@@ -10,12 +10,12 @@ class Reserveer extends Controller
 {
     public function __construct()
     {
-        $this->db = new Database;
+        $this->model = new Bios_model;
     }
 
     public function bios($id) {
-        $data["tijden"] = $this->db->getAll("SELECT * FROM reservation_times INNER JOIN cinemas on reservation_times.cinema_id = cinemas.cinema_id WHERE cinemas.cinema_id = $id");
-        $data["naam"] = $this->db->getAll("SELECT cinema_name FROM cinemas  WHERE cinema_id = $id");
+        $data["tijden"] = $this->model->get("SELECT * FROM reservation_times INNER JOIN cinemas on reservation_times.cinema_id = cinemas.cinema_id WHERE cinemas.cinema_id = $id");
+        $data["naam"] = $this->model->get("SELECT cinema_name FROM cinemas  WHERE cinema_id = $id");
         $data["disabled"] = self::disabledCheck($data['tijden']);
         $days = array(
             1 => 'Maandag',
@@ -27,6 +27,8 @@ class Reserveer extends Controller
             7 => 'Zondag'
         );
         $data['dag'] = $days;
+        $query = "SELECT rooms.room_id from reservation_times INNER JOIN rooms on rooms.room_id = reservation_times.room_id WHERE reservation_times.cinema_id = $id";
+        $data['zaal'] = $this->model->get($query);
         Load::view("reserveForm", $data);
     }
 
@@ -44,4 +46,3 @@ class Reserveer extends Controller
         return $options;
     }
 }
-

@@ -39,9 +39,6 @@ class Bioscoop extends Controller
         $id = $_SESSION['uid']['user_id'];
         $query = "SELECT * FROM cinemas WHERE cinema_id = $id";
         $data['data'] = $this->model->get($query);
-        $data['dag'] = $days;
-        $query = "SELECT rooms.room_id from reservation_times INNER JOIN rooms on rooms.room_id = reservation_times.room_id WHERE reservation_times.cinema_id = $id";
-        $data['zaal'] = $this->model->get($query);
         Load::view("biosOverzicht", $data);
     }
 

@@ -19,8 +19,8 @@ class Contact extends Controller
     }
 
     /**
-     * @param $email string - email from contact form
-     * @param $message string - message from contact form
+     * @param string $email - email from contact form
+     * @param string $message - message from contact form
      *
      * sendMail() contains the variables with the information to send a email.
      */

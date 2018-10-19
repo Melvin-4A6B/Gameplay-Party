@@ -31,7 +31,7 @@
       }
 
       /**
-      * @param $id
+      * @param int $id
       *
       * pagina_bewerken() retrieves all pages with a specific id.
       * $id is the integer you give the method so it can retrieve that specific page.
@@ -44,7 +44,7 @@
     }
 
     /**
-    * @param $id
+    * @param int $id
     *
     * update() retrieves the data that the user has typed in the form and updates the the row with the corresponding id.
     **/

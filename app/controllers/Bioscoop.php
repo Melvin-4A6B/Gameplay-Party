@@ -25,7 +25,9 @@ class Bioscoop extends Controller
 
     /**
     * show() only shows the cinemas that are retrieved by get().
-    **/
+     *
+     * @return loads bioscoop.php  and gives $data with it
+     **/
     public function show()
     {
         $data["bioscopen"] = $this->get();
@@ -34,6 +36,8 @@ class Bioscoop extends Controller
 
     /**
     * beheren() retrieves all data for the cinemas so the data can be altered.
+     *
+     * @return loads biosoverzicht.php
     **/
     public function beheren()
     {
@@ -58,7 +62,9 @@ class Bioscoop extends Controller
 
     /**
     * reserveringen() retrieves all reservations froms the database with the conected customer.
-    **/
+     *
+     * @return loads biosreserveringen.php  and gives $data with it
+     **/
     public function reserveringen()
     {
         $id = $_SESSION['uid']['role_id'];

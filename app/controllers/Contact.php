@@ -3,7 +3,9 @@ class Contact extends Controller
 {
   /**
   * form() loads the contact view.
-  **/
+   *
+   * @return loads contact.php  and gives $data with it
+   **/
     public function form()
     {
         if (!isset($_POST["contact"])) {
@@ -19,10 +21,12 @@ class Contact extends Controller
     }
 
     /**
+     * sendMail() contains the variables with the information to send a email.
+     *
      * @param string $email - email from contact form
      * @param string $message - message from contact form
      *
-     * sendMail() contains the variables with the information to send a email.
+     * @return void
      */
     public function sendEmail($from, $msg)
     {

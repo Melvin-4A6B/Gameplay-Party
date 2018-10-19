@@ -39,11 +39,11 @@ class Reserveer extends Controller
     }
 
     /**
-    * @param string $data
-    *
-    * disabledCheck()
-    *
-    * @return $options
+     * disabledCheck()
+     *
+     * @param string $data
+     *
+     * @return $options string
     **/
     public function disabledCheck($data)
     {
@@ -60,7 +60,9 @@ class Reserveer extends Controller
 
     /**
     * process() checks and changes to input so it can be correctly placed in the database
-    **/
+     *
+     * @return if set loads reserveform.php and gives $data with it of else it will only load reserveform.php
+     */
     public function process()
     {
         if (isset($_POST['reserveer'])) {

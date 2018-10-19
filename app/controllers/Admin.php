@@ -13,6 +13,7 @@ class Admin extends Controller
 
     /**
      * accountBeheer() retrieves all cinnema accounts from the database so they can be shown in a table
+     * @return loads accountbeheer.php and gives $data with it
      **/
     public function accountBeheer()
     {
@@ -23,6 +24,7 @@ class Admin extends Controller
 
     /**
      * paginaBeheer retrieves all pages from the database so they can be shown in a table
+     * @return loads paginabeheer.php and gives $data with it
      **/
     public function paginaBeheer()
     {
@@ -31,21 +33,14 @@ class Admin extends Controller
         Load::view("paginaBeheer", $data);
     }
 
-<<<<<<< HEAD
-    /**
-     * @param $id
-     *
-     * pagina_bewerken() retrieves all pages with a specific id.
-     * $id is the integer you give the method so it can retrieve that specific page.
-     **/
-=======
       /**
-      * @param int $id
-      *
-      * pagina_bewerken() retrieves all pages with a specific id.
-      * $id is the integer you give the method so it can retrieve that specific page.
+       * pagina_bewerken() retrieves all pages with a specific id.
+       * $id is the integer you give the method so it can retrieve that specific page.
+       *
+       * @param int $id
+       *
+       * @return loads paginabeheer.php and gives $data with it
       **/
->>>>>>> 4680094e1633ea61c9041673de5e290f59a879dc
     public function pagina_bewerken($id)
     {
         $query = "SELECT * FROM pages WHERE page_id = '" . $id . "'";
@@ -54,17 +49,13 @@ class Admin extends Controller
     }
 
     /**
-<<<<<<< HEAD
-     * @param $id
-     *
      * update() retrieves the data that the user has typed in the form and updates the the row with the corresponding id.
-     **/
-=======
-    * @param int $id
-    *
-    * update() retrieves the data that the user has typed in the form and updates the the row with the corresponding id.
+     *
+     * @param int $id
+     *
+     * @return void
     **/
->>>>>>> 4680094e1633ea61c9041673de5e290f59a879dc
+
     public function update($id)
     {
         if (isset($_POST["bewerken"])) {
@@ -78,6 +69,8 @@ class Admin extends Controller
 
     /**
      * addCinema() retrieves all data that the user has typed in the form and inserts it into the cinemas table
+     *
+     * @return if not $_POST nog set it wil load addbios.php
      **/
     public function addCinema()
     {

@@ -8,6 +8,8 @@
 
     /**
     * index() retrieves the Home page from the database and loads the home view.
+     *
+     * @return loads home.php and gives $data with it
     **/
     public function index()
     {

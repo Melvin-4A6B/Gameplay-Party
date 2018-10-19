@@ -1,5 +1,9 @@
 <?php
+/**
+ * Define some globals
+ */
 define("TITLE", "Gameplay Party");
+define("VERSION", "1.0");
 define("BASE_URL", "D:/coding/xampp/htdocs/school/Gameplay-Party/");
 define("ROOT", "http://localhost/school/Gameplay-Party/");
 define("IMG", ROOT . "app/views/images/");

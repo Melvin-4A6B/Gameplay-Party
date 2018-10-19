@@ -1,6 +1,12 @@
 <?php
   class Session {
 
+    /**
+     * Check if a session is started
+     * Otherwise start a session
+     * 
+     * Loop through each existing $_COOKIE
+     */
     public function __construct()
     {
 
@@ -32,6 +38,15 @@
 
     }
 
+    /**
+     * @param array $key
+     * 
+     * Check if the $key param is an array
+     * Loop through the array
+     * Generate a session key if the session is checked
+     * 
+     * @return $_SESSION[$key]
+     */
     public static function check($key)
     {
 
@@ -60,6 +75,13 @@
 
     }
 
+    /**
+     * @param array $key
+     *
+     * Check if the session exists
+     *  
+     * @return $_SESSION
+     */
     public static function get($key)
     {
 
@@ -74,6 +96,14 @@
 
     }
 
+    /**
+     * @param array $key
+     * @param array $value
+     * @param int $ttl
+     * 
+     * Set the session equal to $value
+     * Set the cookie to the session
+     */
     public static function set($key, $value, $ttl = 0)
     {
 
@@ -92,6 +122,12 @@
 
     }
 
+    /**
+     * @param array $key
+     * 
+     * Unset the session
+     * Delete the cookie
+     */
     public static function kill($key)
     {
 
@@ -107,6 +143,10 @@
 
     }
 
+    /**
+     * Unset all sessions
+     * Destroy all cookies
+     */
     public static function endSession()
     {
 
@@ -123,13 +163,22 @@
       session_destroy();
     }
 
+    /**
+     * @param array $key
+     * 
+     * Generates a session key based on the application name and version
+     * 
+     * @return $value
+     */
     public static function generateSessionKey($key)
     {
 
-      $append = $GLOBALS["config"]["appName"];
-      $version = $GLOBALS["config"]["version"];
+      $append = TITLE;
+      $version = VERSION;
 
-      return md5($key.$append.$version);
+      $value = $key . $append . $version;
+
+      return md5($value);
     }
 
   }

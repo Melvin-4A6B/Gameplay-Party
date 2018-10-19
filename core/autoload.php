@@ -1,4 +1,7 @@
 <?php
+  /**
+   * Autoload the controllers and models
+   */
   spl_autoload_register(function($class)
   {
 

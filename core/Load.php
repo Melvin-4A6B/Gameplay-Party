@@ -1,6 +1,12 @@
 <?php
   class Load {
 
+    /**
+     * @param text $file
+     * @param array $vars
+     * 
+     * a method to load a view and extract $vars array
+     */
     public static function view($file, $vars = array())
     {
 

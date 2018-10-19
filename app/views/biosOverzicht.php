@@ -1,6 +1,6 @@
 <div class="container">
     <h2>Bioscoop beschikbaarheid</h2>
-
+    <a href="<?= ROOT; ?>admin/addcinema/"><button class="btn-primary"><i class="fa fa-plus"></i></button></a>
     <div class="table-responsive">
         <table class="table table-bordered">
             <thead>

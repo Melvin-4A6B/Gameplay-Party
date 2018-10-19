@@ -1,4 +1,8 @@
 <?php
+
+/**
+* Admin controller contains the methods for managing the webapplication
+**/
   class Admin extends Controller {
 
     public function __construct()
@@ -6,6 +10,9 @@
       $this->model = new Admin_model;
     }
 
+    /**
+    * accountBeheer() retrieves all cinnema accounts from the database so they can be shown in a table
+    **/
     public function accountBeheer()
     {
       $cinemaQuery = "SELECT * FROM users WHERE role_id = 1";;
@@ -13,6 +20,9 @@
       Load::view("accountBeheer", $data);
     }
 
+    /**
+    * paginaBeheer retrieves all pages from the database so they can be shown in a table
+    **/
     public function paginaBeheer()
       {
         $pageQuery = "SELECT * FROM pages";
@@ -20,7 +30,12 @@
         Load::view("paginaBeheer", $data);
       }
 
-
+      /**
+      * @param $id
+      *
+      * pagina_bewerken() retrieves all pages with a specific id.
+      * $id is the integer you give the method so it can retrieve that specific page.
+      **/
     public function pagina_bewerken($id)
     {
       $query = "SELECT * FROM pages WHERE page_id = '".$id."'";
@@ -28,6 +43,11 @@
       Load::view("bewerk", $data);
     }
 
+    /**
+    * @param $id
+    *
+    * update() retrieves the data that the user has typed in the form and updates the the row with the corresponding id.
+    **/
     public function update($id)
     {
       if(isset($_POST["bewerken"]))
@@ -40,6 +60,9 @@
       }
     }
 
+    /**
+    * addCinema() retrieves all data that the user has typed in the form and inserts it into the cinemas table
+    **/
     public function addCinema()
     {
       if(isset($_POST["addCinema"]))

@@ -1,5 +1,7 @@
 <?php
-
+/**
+*
+**/
 class Bioscoop extends Controller
 {
 
@@ -8,6 +10,11 @@ class Bioscoop extends Controller
         $this->model = new Bios_model;
     }
 
+    /**
+    * get() retrieves all cinemas and cinema pictures and shows them.
+    *
+    * @return $data
+    **/
     public function get()
     {
         $query = "SELECT * FROM cinemas inner join cinema_pictures on cinema_pictures.cinema_id WHERE cinemas.cinema_id = cinema_pictures.cinema_id";
@@ -16,12 +23,18 @@ class Bioscoop extends Controller
         return $data;
     }
 
+    /**
+    * show() only shows the cinemas that are retrieved by get().
+    **/
     public function show()
     {
         $data["bioscopen"] = $this->get();
         Load::view("bioscoop", $data);
     }
 
+    /**
+    * beheren() retrieves all data for the cinemas so the data can be altered.
+    **/
     public function beheren()
     {
         $days = array(
@@ -43,6 +56,9 @@ class Bioscoop extends Controller
         Load::view("biosOverzicht", $data);
     }
 
+    /**
+    * reserveringen() retrieves all reservations froms the database with the conected customer.
+    **/
     public function reserveringen()
     {
         $id = $_SESSION['uid']['role_id'];

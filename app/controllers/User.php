@@ -6,6 +6,9 @@
         $this->user = new User_model;
     }
 
+    /**
+    * login() checks the validity of the input.
+    **/
     public function login()
     {
       if(isset($_POST["login"]))
@@ -18,6 +21,12 @@
       }
     }
 
+    /**
+    * @param $email
+    * @param $password
+    *
+    * validate() collects the input and sends it to auth(), if the result is positive it logs the user in, otherwise it gives a error.
+    **/
     public function validate($email, $password)
     {
       if($logged_in = $this->auth($email, $password))
@@ -32,8 +41,16 @@
         $data["error"] = "Incorrecte login gegevens";
         Load::view("login", $data);
       }
-    }
+     }
 
+    /**
+    * @param $email
+    * @param $password
+    *
+    * auth() compares the input with the content in the table to check if it is correct.
+    *
+    * @return $auth
+    **/
     public function auth($email, $password)
     {
       $auth = false;
@@ -49,6 +66,9 @@
       return $auth;
     }
 
+    /**
+    * logout() ends the current session, so no user has logged in.
+    **/
     public function logout()
     {
       session_start();

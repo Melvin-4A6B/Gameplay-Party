@@ -13,6 +13,11 @@ class Reserveer extends Controller
         $this->model = new Bios_model;
     }
 
+    /**
+    * @param $id
+    *
+    * bios() retrieve data from the database to create a reservation form.
+    **/
     public function bios($id)
     {
         $data["tijden"] = $this->model->get("SELECT * FROM reservation_times INNER JOIN cinemas on reservation_times.cinema_id = cinemas.cinema_id WHERE cinemas.cinema_id = $id");
@@ -33,6 +38,13 @@ class Reserveer extends Controller
         Load::view("reserveForm", $data);
     }
 
+    /**
+    * @param $data
+    *
+    * disabledCheck()
+    *
+    * @return $options
+    **/
     public function disabledCheck($data)
     {
         $disabled = '';
@@ -44,8 +56,11 @@ class Reserveer extends Controller
             $options = array($disabled, $empty);
         }
         return $options;
-    }
+     }
 
+    /**
+    * process() checks and changes to input so it can be correctly placed in the database
+    **/
     public function process()
     {
         if (isset($_POST['reserveer'])) {

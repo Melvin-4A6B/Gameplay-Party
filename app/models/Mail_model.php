@@ -12,19 +12,27 @@
 class Mail_model
 {
     /**
-     * @param $email
-     * @return bool
+     * @param $email string | mail to be validated
+     * @return bool | return false if $email is not correct
      */
     public function validateMail($email)
     {
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-           return true;
+           return false;
+        } else {
+            return true;
         }
     }
 
+    /**
+     * @param $input string | text to validate
+     * @return bool | return false if preg match not matches
+     */
     public function validateText($input) {
         if (!preg_match("/^[a-zA-Z ]*$/", $input))
         {
+            return false;
+        } else {
             return true;
         }
     }

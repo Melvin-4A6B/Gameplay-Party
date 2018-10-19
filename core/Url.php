@@ -14,7 +14,7 @@
     }
 
     /**
-     * @param text $key
+     * @param string $key
      * 
      * Check if the get value is set
      * Decode the $_GET[$key]

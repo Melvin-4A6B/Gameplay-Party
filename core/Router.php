@@ -24,8 +24,8 @@ class Router
     }
 
     /**
-     * @param text $className
-     * @param text $method
+     * @param string $className
+     * @param string $method
      * @param array $params
      * 
      * Requires the class

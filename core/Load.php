@@ -2,7 +2,7 @@
   class Load {
 
     /**
-     * @param text $file
+     * @param string $file
      * @param array $vars
      * 
      * a method to load a view and extract $vars array

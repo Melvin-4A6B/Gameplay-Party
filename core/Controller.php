@@ -26,7 +26,7 @@ class Controller
     }
 
     /**
-     * @param text $data
+     * @param string $data
      * 
      * Sanitize the data
      * 

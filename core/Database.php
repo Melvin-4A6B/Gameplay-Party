@@ -21,7 +21,7 @@ class Database extends Controller
     }
 
     /**
-     * @param text $sql
+     * @param string $sql
      * 
      * simple insert method to insert data into the database
      * 
@@ -63,6 +63,13 @@ class Database extends Controller
 
     }
 
+    /**
+     * @param string $sql
+     * 
+     * Insert data into the database
+     * 
+     * @return last inserted id
+     */
     public function create($sql)
     {
         $stmt = $this->conn->prepare($sql);
@@ -72,7 +79,7 @@ class Database extends Controller
     }
 
     /**
-     * @param text $sql
+     * @param string $sql
      * 
      * simple get method to fetch data from the database into an associative array
      * 
@@ -88,7 +95,7 @@ class Database extends Controller
     }
 
     /**
-     * @param text $sql
+     * @param string $sql
      * 
      * simple getAll method to fetch all data from the database into an associative array
      * 
@@ -104,7 +111,7 @@ class Database extends Controller
     }
 
     /**
-     * @param text $sql
+     * @param string $sql
      * 
      * simple update method to update data in the database
      */
@@ -115,7 +122,7 @@ class Database extends Controller
     }
 
     /**
-     * @param text $sql
+     * @param string $sql
      * 
      * simple delete method to delete data from the database
      */

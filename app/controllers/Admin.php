@@ -31,12 +31,21 @@ class Admin extends Controller
         Load::view("paginaBeheer", $data);
     }
 
+<<<<<<< HEAD
     /**
      * @param $id
      *
      * pagina_bewerken() retrieves all pages with a specific id.
      * $id is the integer you give the method so it can retrieve that specific page.
      **/
+=======
+      /**
+      * @param int $id
+      *
+      * pagina_bewerken() retrieves all pages with a specific id.
+      * $id is the integer you give the method so it can retrieve that specific page.
+      **/
+>>>>>>> 4680094e1633ea61c9041673de5e290f59a879dc
     public function pagina_bewerken($id)
     {
         $query = "SELECT * FROM pages WHERE page_id = '" . $id . "'";
@@ -45,10 +54,17 @@ class Admin extends Controller
     }
 
     /**
+<<<<<<< HEAD
      * @param $id
      *
      * update() retrieves the data that the user has typed in the form and updates the the row with the corresponding id.
      **/
+=======
+    * @param int $id
+    *
+    * update() retrieves the data that the user has typed in the form and updates the the row with the corresponding id.
+    **/
+>>>>>>> 4680094e1633ea61c9041673de5e290f59a879dc
     public function update($id)
     {
         if (isset($_POST["bewerken"])) {

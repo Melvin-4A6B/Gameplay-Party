@@ -22,8 +22,8 @@
     }
 
     /**
-    * @param $email
-    * @param $password
+    * @param string $email
+    * @param string $password
     *
     * validate() collects the input and sends it to auth(), if the result is positive it logs the user in, otherwise it gives a error.
     **/
@@ -44,8 +44,8 @@
      }
 
     /**
-    * @param $email
-    * @param $password
+    * @param string $email
+    * @param string $password
     *
     * auth() compares the input with the content in the table to check if it is correct.
     *

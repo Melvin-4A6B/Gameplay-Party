@@ -14,7 +14,7 @@ class Reserveer extends Controller
     }
 
     /**
-    * @param $id
+    * @param int $id
     *
     * bios() retrieve data from the database to create a reservation form.
     **/
@@ -39,7 +39,7 @@ class Reserveer extends Controller
     }
 
     /**
-    * @param $data
+    * @param string $data
     *
     * disabledCheck()
     *

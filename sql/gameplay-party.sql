@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.8.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 17, 2018 at 11:18 AM
--- Server version: 10.1.34-MariaDB
--- PHP Version: 7.2.7
+-- Gegenereerd op: 07 nov 2018 om 20:14
+-- Serverversie: 10.1.32-MariaDB
+-- PHP-versie: 7.2.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cinemas`
+-- Tabelstructuur voor tabel `cinemas`
 --
 
 CREATE TABLE `cinemas` (
@@ -45,7 +45,7 @@ CREATE TABLE `cinemas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `cinemas`
+-- Gegevens worden geëxporteerd voor tabel `cinemas`
 --
 
 INSERT INTO `cinemas` (`cinema_id`, `cinema_name`, `info_url`, `street`, `house_number`, `postal_code`, `city`, `state`, `car_accessibility`, `ov_accessibility`, `bike_accessibility`, `wheelchair_accessibility`, `cinema_conditions`) VALUES
@@ -66,7 +66,7 @@ INSERT INTO `cinemas` (`cinema_id`, `cinema_name`, `info_url`, `street`, `house_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cinema_pictures`
+-- Tabelstructuur voor tabel `cinema_pictures`
 --
 
 CREATE TABLE `cinema_pictures` (
@@ -76,7 +76,7 @@ CREATE TABLE `cinema_pictures` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `cinema_pictures`
+-- Gegevens worden geëxporteerd voor tabel `cinema_pictures`
 --
 
 INSERT INTO `cinema_pictures` (`cinema_picture_id`, `cinema_id`, `cinema_picture_path`) VALUES
@@ -97,7 +97,7 @@ INSERT INTO `cinema_pictures` (`cinema_picture_id`, `cinema_id`, `cinema_picture
 -- --------------------------------------------------------
 
 --
--- Table structure for table `customers`
+-- Tabelstructuur voor tabel `customers`
 --
 
 CREATE TABLE `customers` (
@@ -113,10 +113,18 @@ CREATE TABLE `customers` (
   `state` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Gegevens worden geëxporteerd voor tabel `customers`
+--
+
+INSERT INTO `customers` (`customer_id`, `first_name`, `last_name`, `phone_number`, `street_name`, `house_number`, `addition`, `postal_code`, `city`, `state`) VALUES
+(1, 'kaan', 'dag', '0644584323', 'testlaan', 12, 'b', 'Utrecht', '5465 vz', '2'),
+(3, 'voornaam', 'achternaam', '0612345675', 'testlaan', 1, 'b', '3443fe', 'Utrecht', '2');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pages`
+-- Tabelstructuur voor tabel `pages`
 --
 
 CREATE TABLE `pages` (
@@ -127,7 +135,7 @@ CREATE TABLE `pages` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `pages`
+-- Gegevens worden geëxporteerd voor tabel `pages`
 --
 
 INSERT INTO `pages` (`page_id`, `page_name`, `page_slug`, `page_content`) VALUES
@@ -136,7 +144,7 @@ INSERT INTO `pages` (`page_id`, `page_name`, `page_slug`, `page_content`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `prices`
+-- Tabelstructuur voor tabel `prices`
 --
 
 CREATE TABLE `prices` (
@@ -152,26 +160,34 @@ CREATE TABLE `prices` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `reservations`
+-- Tabelstructuur voor tabel `reservations`
 --
 
 CREATE TABLE `reservations` (
   `reservation_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
   `cinema_id` int(11) NOT NULL,
-  `reservation_date` datetime NOT NULL,
-  `begin_time` datetime NOT NULL,
-  `end_time` datetime NOT NULL,
+  `room_id` int(11) NOT NULL,
+  `reservation_date` date NOT NULL,
+  `begin_time` time NOT NULL,
+  `end_time` time NOT NULL,
   `amount_persons` int(11) NOT NULL,
   `subtotal` double NOT NULL,
   `total` double NOT NULL,
   `reserved` enum('0','1') NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Gegevens worden geëxporteerd voor tabel `reservations`
+--
+
+INSERT INTO `reservations` (`reservation_id`, `customer_id`, `cinema_id`, `room_id`, `reservation_date`, `begin_time`, `end_time`, `amount_persons`, `subtotal`, `total`, `reserved`) VALUES
+(1, 1, 1, 1, '2018-11-14', '15:00:00', '17:00:00', 10, 0, 0, '0');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `reservation_times`
+-- Tabelstructuur voor tabel `reservation_times`
 --
 
 CREATE TABLE `reservation_times` (
@@ -183,7 +199,7 @@ CREATE TABLE `reservation_times` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `reservation_times`
+-- Gegevens worden geëxporteerd voor tabel `reservation_times`
 --
 
 INSERT INTO `reservation_times` (`time_id`, `cinema_id`, `room_id`, `start_time`, `end_time`) VALUES
@@ -193,7 +209,7 @@ INSERT INTO `reservation_times` (`time_id`, `cinema_id`, `room_id`, `start_time`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `roles`
+-- Tabelstructuur voor tabel `roles`
 --
 
 CREATE TABLE `roles` (
@@ -202,7 +218,7 @@ CREATE TABLE `roles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `roles`
+-- Gegevens worden geëxporteerd voor tabel `roles`
 --
 
 INSERT INTO `roles` (`role_id`, `role_name`) VALUES
@@ -215,7 +231,7 @@ INSERT INTO `roles` (`role_id`, `role_name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `rooms`
+-- Tabelstructuur voor tabel `rooms`
 --
 
 CREATE TABLE `rooms` (
@@ -228,7 +244,7 @@ CREATE TABLE `rooms` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `rooms`
+-- Gegevens worden geëxporteerd voor tabel `rooms`
 --
 
 INSERT INTO `rooms` (`room_id`, `cinema_id`, `amount_chairs`, `wheelchair_places`, `screen_size`, `room_versions`) VALUES
@@ -238,7 +254,7 @@ INSERT INTO `rooms` (`room_id`, `cinema_id`, `amount_chairs`, `wheelchair_places
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Tabelstructuur voor tabel `users`
 --
 
 CREATE TABLE `users` (
@@ -250,7 +266,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `users`
+-- Gegevens worden geëxporteerd voor tabel `users`
 --
 
 INSERT INTO `users` (`user_id`, `role_id`, `user_name`, `email`, `password`) VALUES
@@ -259,50 +275,53 @@ INSERT INTO `users` (`user_id`, `role_id`, `user_name`, `email`, `password`) VAL
 (3, 1, 'Kinepolis Almere', 'almere@kinepolis.nl', 'password');
 
 --
--- Indexes for dumped tables
+-- Indexen voor geëxporteerde tabellen
 --
 
 --
--- Indexes for table `cinemas`
+-- Indexen voor tabel `cinemas`
 --
 ALTER TABLE `cinemas`
-  ADD PRIMARY KEY (`cinema_id`);
+  ADD PRIMARY KEY (`cinema_id`),
+  ADD UNIQUE KEY `cinema_name` (`cinema_name`);
 
 --
--- Indexes for table `cinema_pictures`
+-- Indexen voor tabel `cinema_pictures`
 --
 ALTER TABLE `cinema_pictures`
   ADD PRIMARY KEY (`cinema_picture_id`),
   ADD KEY `cinema_id` (`cinema_id`);
 
 --
--- Indexes for table `customers`
+-- Indexen voor tabel `customers`
 --
 ALTER TABLE `customers`
   ADD PRIMARY KEY (`customer_id`);
 
 --
--- Indexes for table `pages`
+-- Indexen voor tabel `pages`
 --
 ALTER TABLE `pages`
   ADD PRIMARY KEY (`page_id`);
 
 --
--- Indexes for table `prices`
+-- Indexen voor tabel `prices`
 --
 ALTER TABLE `prices`
   ADD PRIMARY KEY (`price_id`),
   ADD UNIQUE KEY `reservation_id` (`reservation_id`);
 
 --
--- Indexes for table `reservations`
+-- Indexen voor tabel `reservations`
 --
 ALTER TABLE `reservations`
   ADD PRIMARY KEY (`reservation_id`),
-  ADD KEY `cinema_id` (`cinema_id`);
+  ADD KEY `cinema_id` (`cinema_id`),
+  ADD KEY `customer_id` (`customer_id`),
+  ADD KEY `room_id` (`room_id`);
 
 --
--- Indexes for table `reservation_times`
+-- Indexen voor tabel `reservation_times`
 --
 ALTER TABLE `reservation_times`
   ADD PRIMARY KEY (`time_id`),
@@ -310,115 +329,110 @@ ALTER TABLE `reservation_times`
   ADD KEY `room_id` (`room_id`);
 
 --
--- Indexes for table `roles`
+-- Indexen voor tabel `roles`
 --
 ALTER TABLE `roles`
   ADD PRIMARY KEY (`role_id`);
 
 --
--- Indexes for table `rooms`
+-- Indexen voor tabel `rooms`
 --
 ALTER TABLE `rooms`
   ADD PRIMARY KEY (`room_id`),
   ADD KEY `cinema_id` (`cinema_id`);
 
 --
--- Indexes for table `users`
+-- Indexen voor tabel `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`user_id`),
   ADD KEY `role_id` (`role_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT voor geëxporteerde tabellen
 --
 
 --
--- AUTO_INCREMENT for table `cinemas`
+-- AUTO_INCREMENT voor een tabel `cinemas`
 --
 ALTER TABLE `cinemas`
   MODIFY `cinema_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT for table `cinema_pictures`
+-- AUTO_INCREMENT voor een tabel `cinema_pictures`
 --
 ALTER TABLE `cinema_pictures`
   MODIFY `cinema_picture_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT for table `customers`
+-- AUTO_INCREMENT voor een tabel `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `pages`
+-- AUTO_INCREMENT voor een tabel `pages`
 --
 ALTER TABLE `pages`
   MODIFY `page_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `reservations`
---
-ALTER TABLE `reservations`
-  MODIFY `reservation_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `reservation_times`
+-- AUTO_INCREMENT voor een tabel `reservation_times`
 --
 ALTER TABLE `reservation_times`
   MODIFY `time_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `roles`
+-- AUTO_INCREMENT voor een tabel `roles`
 --
 ALTER TABLE `roles`
   MODIFY `role_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `rooms`
+-- AUTO_INCREMENT voor een tabel `rooms`
 --
 ALTER TABLE `rooms`
   MODIFY `room_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT voor een tabel `users`
 --
 ALTER TABLE `users`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- Constraints for dumped tables
+-- Beperkingen voor geëxporteerde tabellen
 --
 
 --
--- Constraints for table `cinema_pictures`
+-- Beperkingen voor tabel `cinema_pictures`
 --
 ALTER TABLE `cinema_pictures`
   ADD CONSTRAINT `cinema_pictures_ibfk_1` FOREIGN KEY (`cinema_id`) REFERENCES `cinemas` (`cinema_id`);
 
 --
--- Constraints for table `reservations`
+-- Beperkingen voor tabel `reservations`
 --
 ALTER TABLE `reservations`
-  ADD CONSTRAINT `reservations_ibfk_1` FOREIGN KEY (`reservation_id`) REFERENCES `customers` (`customer_id`),
-  ADD CONSTRAINT `reservations_ibfk_2` FOREIGN KEY (`cinema_id`) REFERENCES `cinemas` (`cinema_id`);
+  ADD CONSTRAINT `reservations_ibfk_1` FOREIGN KEY (`cinema_id`) REFERENCES `cinemas` (`cinema_id`),
+  ADD CONSTRAINT `reservations_ibfk_2` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`customer_id`),
+  ADD CONSTRAINT `reservations_ibfk_3` FOREIGN KEY (`room_id`) REFERENCES `rooms` (`room_id`);
 
 --
--- Constraints for table `reservation_times`
+-- Beperkingen voor tabel `reservation_times`
 --
 ALTER TABLE `reservation_times`
   ADD CONSTRAINT `reservation_times_ibfk_1` FOREIGN KEY (`cinema_id`) REFERENCES `cinemas` (`cinema_id`),
   ADD CONSTRAINT `reservation_times_ibfk_2` FOREIGN KEY (`room_id`) REFERENCES `rooms` (`room_id`);
 
 --
--- Constraints for table `rooms`
+-- Beperkingen voor tabel `rooms`
 --
 ALTER TABLE `rooms`
   ADD CONSTRAINT `rooms_ibfk_1` FOREIGN KEY (`cinema_id`) REFERENCES `cinemas` (`cinema_id`);
 
 --
--- Constraints for table `users`
+-- Beperkingen voor tabel `users`
 --
 ALTER TABLE `users`
   ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `roles` (`role_id`);

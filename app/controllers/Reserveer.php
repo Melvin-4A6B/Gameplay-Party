@@ -11,6 +11,7 @@ class Reserveer extends Controller
     public function __construct()
     {
         $this->model = new Bios_model;
+        $this->db = new Database;
     }
 
     /**
@@ -74,17 +75,25 @@ class Reserveer extends Controller
             $data['addition'] = self::sanitize(Url::post("toevoeging"));
             $data['city'] = self::sanitize(Url::post("stad"));
             $data['postalCode'] = self::sanitize(Url::post("postcode"));
-            $data['persons'] = self::sanitize(Url::post("aantal_personen"));
 
             $date = explode(" ", Url::post("datum") );
 
-            $data['day'] = $date[2];
-            $data['endTime'] = $date[4];
-            $data['beginTime'] = $date[5];
+            $res['day'] = $date[2];
+            $res['endTime'] = $date[4];
+            $res['beginTime'] = $date[5];
+            $res['persons'] = self::sanitize(Url::post("aantal_personen"));
 
+//            self::debug($data);
 //            $this->model->insert('customers', $data);
 //            $this->model->insert('reservations', $res);
-//            self::debug($data);
+            $c_sql = "INSERT INTO `customers` (`first_name`, `last_name`, `phone_number`, `street_name`, `house_number`, `addition`, `postal_code`, `city`, `state`) 
+                      VALUES ('$data[firstName]', '$data[lastName]',  '$data[phone]', '$data[streetname]', '$data[houseNumber]', '$data[addition]', '$data[postalCode]', '$data[city]', 2 )";
+            $this->db->create($c_sql);
+
+            $r_sql = "INSERT INTO `reservations`(`customer_id`, `cinema_id`, `room_id`, `reservation_date`, `begin_time`, `end_time`, `amount_persons`, `subtotal`, `total`, `reserved`) 
+                      VALUES ()";
+            $this->db->create($r_sql);
+
             $data['msg'] = "uw reservering is succesvol verwerkt";
             Load::view('reserveForm', $data);
         } else {

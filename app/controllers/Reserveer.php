@@ -80,7 +80,8 @@ class Reserveer extends Controller
 
             $res['day'] = $date[2];
             $res['endTime'] = $date[4];
-            $res['beginTime'] = $date[5];
+            $res['beginTime'] = $date[6];
+            $res['room'] = $date[8];
             $res['persons'] = self::sanitize(Url::post("aantal_personen"));
 
 //            self::debug($data);
@@ -90,8 +91,8 @@ class Reserveer extends Controller
                       VALUES ('$data[firstName]', '$data[lastName]',  '$data[phone]', '$data[streetname]', '$data[houseNumber]', '$data[addition]', '$data[postalCode]', '$data[city]', 2 )";
             $this->db->create($c_sql);
 
-            $r_sql = "INSERT INTO `reservations`(`customer_id`, `cinema_id`, `room_id`, `reservation_date`, `begin_time`, `end_time`, `amount_persons`, `subtotal`, `total`, `reserved`) 
-                      VALUES ()";
+            $r_sql = "INSERT INTO `reservations`(`customer_id`, `cinema_id`, `room_id`, `reservation_date`, `begin_time`, `end_time`, `amount_persons`, `reserved`) 
+                      VALUES ('1', '1', '$res[room]', '$res[day]', ' $res[beginTime]', '$res[endTime]', '$res[persons]', 2 )";
             $this->db->create($r_sql);
 
             $data['msg'] = "uw reservering is succesvol verwerkt";

@@ -12,7 +12,7 @@
         <div class="collapse navbar-collapse " id="navbarSupportedContent">
             <ul class="navbar-nav bg-custom mr-auto">
                 <li class="nav-item">
-                    <a  style="font-size: 15px;" class="nav-link a-white pl-1" href="<?= ROOT; ?>bioscoop/show/">Reserveren</a>
+                    <a  style="font-size: 15px;" class="nav-link a-white pl-1" href="<?= ROOT; ?>bioscoop/show/">Bioscopen</a>
                 </li>
                 <li class="nav-item">
                     <a  style="font-size: 15px;" class="nav-link a-white pl-1" href="<?= ROOT; ?>contact/form">Contact</a>
